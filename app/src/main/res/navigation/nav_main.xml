@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@+id/baseFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_loginOtpFragment"
+            app:destination="@id/loginOtpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_referralCodeFragment"
+            app:destination="@id/referralCodeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_settingWebView"
+            app:destination="@id/settingWebView" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginOtpFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.login.LoginOtpFragment"
+        android:label="LoginOtpFragment">
+
+        <argument
+            android:name="phoneNo"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_loginOtpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginOtpFragment_to_profileCreateFragment"
+            app:destination="@id/profileCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tournamentsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.home.TournamentsFragment"
+        android:label="TournamentsFragment">
+        <argument
+            android:name="fromProfileTOurnaments"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_tournamentsFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_tournamentsFragment_to_myFundsFragment"
+            app:destination="@id/myFundsFragment" />
+        <action
+            android:id="@+id/action_tournamentsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/freePlayFragment3"
+        android:name="com.robosoft.playverse.feature.presentation.view.home.FreePlayFragment"
+        android:label="FreePlayFragment">
+        <action
+            android:id="@+id/action_freePlayFragment3_to_profileDetailsFragment2"
+            app:destination="@id/profileDetailsFragment2" />
+        <action
+            android:id="@+id/action_freePlayFragment3_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.gamedetails.GameDetailsFragment"
+        android:label="GameDetailsFragment">
+
+        <argument
+            android:name="tournamentId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="from"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_hallOfFameFragment_to_hallOfFameLeaderboardFragment"
+            app:destination="@id/hallOfFameLeaderboardFragment" />
+
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+
+
+
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_gameRewardsAndLeaderFragment"
+            app:destination="@id/gameRewardsAndLeaderFragment" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_depositGameListing"
+            app:destination="@id/depositGameListing" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_gameRecentRewardsAndLeaderFragment"
+            app:destination="@id/gameRecentRewardsAndLeaderFragment" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameRewardsAndLeaderFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.gamedetails.GameRewardsAndLeaderFragment"
+        android:label="GameRewardsAndLeaderFragment">
+
+        <argument
+            android:name="tournamentId"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="gameUrl"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="gameId"
+            android:defaultValue=""
+            app:argType="string" />
+
+
+        <argument
+            android:name="tournamentsItem"
+            app:argType="com.playverse.data.models.TournamentsItem" />
+        <action
+            android:id="@+id/action_gameRewardsAndLeaderFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+        <action
+            android:id="@+id/action_gameRewardsAndLeaderFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_gameRewardsAndLeaderFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameRecentRewardsAndLeaderFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.gamedetails.RecentGameRewardTournament"
+        android:label="RecentGameRewardTournament">
+
+        <argument
+            android:name="tournamentId"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="gameId"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="fromProfileTournaments"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="viewStandingsClick"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="tournamentsItem"
+            app:argType="com.playverse.data.models.DataItem" />
+
+        <action
+            android:id="@+id/action_gameRecentRewardsAndLeaderFragment_to_gameRecentRewardsAndLeaderFragment"
+            app:destination="@id/gameRecentRewardsAndLeaderFragment" />
+        <action
+            android:id="@+id/action_gameRecentRewardsAndLeaderFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+        <action
+            android:id="@+id/action_gameRecentRewardsAndLeaderFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileCreateFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.login.ProfileCreateFragment"
+        android:label="ProfileCreateFragment">
+        <action
+            android:id="@+id/action_profileCreateFragment_to_freePlayFragment3"
+            app:destination="@id/freePlayFragment3" />
+        <action
+            android:id="@+id/action_profileCreateFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_profileCreateFragment_to_profileOptionsFragment"
+            app:destination="@id/profileOptionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upiLinkFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.linkUPI.UpiLinkFragment"
+        android:label="UpiLinkFragment" />
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileDetailsFragment"
+        android:label="ProfileDetailsFragment">
+
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_profileWebViewFragment"
+            app:destination="@id/profileWebViewFragment" />
+
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_gameRecentRewardsAndLeaderFragment"
+            app:destination="@id/gameRecentRewardsAndLeaderFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_upiLinkFragment"
+            app:destination="@id/upiLinkFragment" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+
+        <action
+            android:id="@+id/action_profileReferralsFragment_to_howWorkReferralsFragment2"
+            app:destination="@id/howWorkReferralsFragment" />
+        
+    </fragment>
+    <fragment
+        android:id="@+id/myFundsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.funds.MyFundsFragment"
+        android:label="MyFundsFragment">
+        <action
+            android:id="@+id/action_myFundsFragment_to_addCashFragment"
+            app:destination="@id/addCashFragment" />
+        <action
+            android:id="@+id/action_myFundsFragment_to_withdrawCashFragment"
+            app:destination="@id/withdrawCashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCashFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.funds.AddCashFragment"
+        android:label="AddCashFragment">
+        <action
+            android:id="@+id/action_addCashFragment_to_depositGameListing"
+            app:destination="@id/depositGameListing" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/getStartedFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.getStarted.GetStartedFragment"
+        android:label="fragment_get_started"
+        tools:layout="@layout/fragment_get_started">
+
+        <action
+            android:id="@+id/action_getStartedFragment_to_freePlayFragment3"
+            app:destination="@id/freePlayFragment3" />
+        <action
+            android:id="@+id/action_getStartedFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_getStartedFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileDetailsFragment2"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileDetailsFragment"
+        android:label="ProfileDetailsFragment">
+
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_gameRecentRewardsAndLeaderFragment"
+            app:destination="@id/gameRecentRewardsAndLeaderFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.home.HomeFragment"
+        android:label="HomeFragment">
+
+        <argument
+            android:name="from_profile_tournaments"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_loginOtpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_profileCreateFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myFundsFragment"
+            app:destination="@id/myFundsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_freePlayFragment3"
+            app:destination="@id/freePlayFragment3" />
+        <action
+            android:id="@+id/action_homeFragment_to_tournamentsFragment"
+            app:destination="@id/tournamentsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="http://www.Playverse.com/homefragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gameRewardsAndLeaderFragment"
+            app:destination="@id/gameRecentRewardsAndLeaderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.home.GameFragment"
+        android:label="GameFragment">
+
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+
+
+        <action
+            android:id="@+id/action_gameFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+
+        <argument
+            android:name="gameid"
+            android:defaultValue=""
+            app:argType="string" />
+
+
+        <argument
+            android:name="gameurl"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="sessionId"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/withdrawCashFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.funds.WithdrawCashFragment"
+        android:label="WithdrawCashFragment" >
+        <argument
+            android:name="winningCash"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_withdrawCashFragment_to_withdrawGameListing"
+            app:destination="@id/withdrawGameListing" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/depositGameListing"
+        android:name="com.robosoft.playverse.feature.presentation.view.funds.DepositGameListing"
+        android:label="DepositGameListing">
+
+        <argument
+            android:name="cashAdded"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="paymentTime"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+        android:name="transactionId"
+        android:defaultValue=""
+        app:argType="string" />
+
+        <argument
+        android:name="walletBalance"
+        android:defaultValue=""
+        app:argType="string" />
+
+        <action
+            android:id="@+id/action_addCashFragment_to_depositGameListing"
+            app:destination="@id/depositGameListing" />
+
+
+        <action
+            android:id="@+id/action_depositGameListing_to_addCashFragment"
+            app:destination="@id/addCashFragment" />
+        <action
+            android:id="@+id/action_depositGameListing_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_depositGameListing_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/baseFragment"
+        android:name="com.robosoft.playverse.BaseFragment"
+        android:label="BaseFragment">
+        <action
+            android:id="@+id/action_baseFragment_to_getStartedFragment"
+            app:destination="@id/getStartedFragment" />
+        <action
+            android:id="@+id/action_baseFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileTournamentsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileTournamentsFragment"
+        android:label="ProfileTournamentsFragment">
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_gameRecentRewardsAndLeaderFragment"
+            app:destination="@id/gameRecentRewardsAndLeaderFragment" />
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_profileWebViewFragment"
+            app:destination="@id/profileWebViewFragment" />
+        <action
+            android:id="@+id/action_profileTournamentsFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileWebViewFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileWebViewFragment"
+        android:label="ProfileWebViewFragment">
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionsHistoryFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.funds.TransactionsHistoryFragment"
+        android:label="TransactionsHistoryFragment" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.SettingFragment"
+        android:label="SettingFragment">
+
+        <action
+            android:id="@+id/action_settingFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_settingWebView"
+            app:destination="@id/settingWebView" />
+        <action
+            android:id="@+id/action_settingFragment_to_getStartedFragment"
+            app:destination="@id/getStartedFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/howWorkReferralsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.HowWorkReferralsFragment"
+        android:label="HowWorkReferralsFragment">
+        <action
+            android:id="@+id/action_howWorkReferralsFragment_to_profileReferralsFragment"
+            app:destination="@id/profileReferralsFragment" />
+        <action
+            android:id="@+id/action_howWorkReferralsFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/referralCodeFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.login.ReferralCodeFragment"
+        android:label="ReferralCodeFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileReferralsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileReferralsFragment"
+        android:label="ProfileReferralsFragment">
+        <action
+            android:id="@+id/action_profileReferralsFragment_to_howWorkReferralsFragment2"
+            app:destination="@id/howWorkReferralsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/alertDialogGameExit"
+        android:name="com.robosoft.playverse.core.util.AlertDialogGameExit"
+        android:label="AlertDialogGameExit">
+
+        <action
+            android:id="@+id/action_alertDialogGameExit_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/hilt_MainActivity"
+        android:name="com.robosoft.playverse.Hilt_MainActivity"
+        android:label="mainActivity" />
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileEditFragment"
+        android:label="ProfileEditFragment" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileOptionsFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.ProfileOptionsFragment"
+        android:label="ProfileOptionsFragment" >
+
+        <argument
+            android:name="fromProfileCreate"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_profileOptionsFragment_to_SelectAvatarFragment"
+            app:destination="@id/selectAvatarFragment" />
+
+        <action
+            android:id="@+id/action_profileOptionsFragment_to_setProfilePicFragment"
+            app:destination="@id/setProfilePicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectAvatarFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.SelectAvatarFragment"
+        android:label="SelectAvatarFragment" >
+
+        <argument
+            android:name="fromProfileCreate"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingWebView"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.SettingWebView"
+        android:label="SettingWebView" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/setProfilePicFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.profile.SetProfilePicFragment"
+        android:label="SetProfilePicFragment" >
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="fromProfileCreate"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_setProfilePicFragment_to_profileOptionsFragment"
+            app:destination="@id/profileOptionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hallOfFameFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.gamedetails.HallOfFameFragment"
+        android:label="HallOfFameFragment" >
+        <action
+            android:id="@+id/action_hallOfFameFragment_to_hallOfFameLeaderboardFragment"
+            app:destination="@id/hallOfFameLeaderboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hallOfFameLeaderboardFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.gamedetails.HallOfFameLeaderboardFragment"
+        android:label="HallOfFameLeaderboardFragment" >
+
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="des"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/withdrawGameListing"
+        android:name="com.robosoft.playverse.feature.presentation.view.funds.WithdrawGameListing"
+        android:label="WithdrawGameListing" >
+        <argument
+            android:name="cashWithdrawn"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="processingFee"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="tds"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="amount_received"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="withdrawal_id"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_withdrawCashFragment_to_withdrawGameListing"
+            app:destination="@id/withdrawGameListing" />
+
+
+        <action
+            android:id="@+id/action_withdrawGameListing_to_withdrawCashFragment"
+            app:destination="@id/withdrawCashFragment" />
+        <action
+            android:id="@+id/action_withdrawGameListing_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_withdrawGameListing_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.search.SearchFragment"
+        android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.search.SearchResultFragment"
+        android:label="SearchResultFragment" />
+    <fragment
+        android:id="@+id/searchViewAllFragment"
+        android:name="com.robosoft.playverse.feature.presentation.view.search.SearchViewAllFragment"
+        android:label="SearchViewAllFragment" />
+
+</navigation>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardBackgroundColor="#20FFFFFF"
+
+        card_view:cardCornerRadius="@dimen/dimen_10dp"
+        card_view:cardElevation="@dimen/dimen_0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp40">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_rewards"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0dp"
+                android:layout_marginTop="@dimen/dp25"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_rewards"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_frame_29768"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp35"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/_1st"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_one_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/omnibus"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_one" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_one_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/_2_8_k"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_one_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_one_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/points"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_one_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/_3rd"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_one_count"
+                    app:layout_constraintTop_toTopOf="@id/txt_winner_one_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_three_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oxygen_regular"
+                    android:lineSpacingExtra="@dimen/sp2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp12"
+                    android:text="@string/dash"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_three"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_three"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_three" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_three_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:fontFamily="@font/exo_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp18"
+                    android:text="@string/dash"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_three_name"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_three_name"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_three_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_three_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:fontFamily="@font/exo_bold"
+                    android:lineSpacingExtra="@dimen/sp2"
+                    android:text="@string/points"
+                    android:textColor="@color/off_black"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_three_count"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_three_count"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_three_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp11"
+                    android:layout_marginEnd="@dimen/dp40"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/_2nd"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_winner_one_name"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_one_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txt_winner_one_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_two_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oxygen_regular"
+                    android:lineSpacingExtra="@dimen/sp2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp12"
+                    android:text="@string/dash"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_two"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_two"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_two" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_two_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:fontFamily="@font/exo_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp18"
+                    android:text="@string/dash"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_two_name"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_two_name"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_two_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_winner_two_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:fontFamily="@font/exo_bold"
+                    android:lineSpacingExtra="@dimen/sp2"
+                    android:text="@string/points"
+                    android:textColor="@color/off_black"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintEnd_toEndOf="@id/txt_winner_two_count"
+                    app:layout_constraintStart_toStartOf="@id/txt_winner_two_count"
+                    app:layout_constraintTop_toBottomOf="@id/txt_winner_two_count" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_first"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginEnd="@dimen/dp7"
+                    android:layout_marginBottom="@dimen/dp180"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_second"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginEnd="@dimen/dp199"
+                    android:layout_marginBottom="@dimen/dp100"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_third"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginStart="@dimen/dp190"
+                    android:layout_marginBottom="@dimen/dp38"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRankList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint_rewards" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

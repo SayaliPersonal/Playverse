@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="networkErrorValue"
+            type="boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@drawable/get_background">
+<ImageView
+    android:id="@+id/imageRusk"
+    android:layout_width="@dimen/dp80"
+    android:layout_height="@dimen/dp80"
+    android:src="@drawable/rusk"
+    visible="@{!networkErrorValue}"
+    android:layout_marginStart="@dimen/dp30"
+    android:layout_marginTop="@dimen/dp30"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:ignore="MissingConstraints" />
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            visible="@{!networkErrorValue}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btNext"
+           app:layout_constraintTop_toBottomOf="@+id/imageRusk">
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            visible="@{!networkErrorValue}"
+            app:dotsColor="@color/gray"
+            app:dotsCornerRadius="10dp"
+            app:dotsSize="10dp"
+            app:dotsSpacing="4dp"
+            app:dotsWidthFactor="1.5"
+            app:layout_constraintBottom_toTopOf="@id/btNext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:progressMode="true"
+            app:selectedDotColor="@color/white" />
+
+        <Button
+            android:id="@+id/btNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/get_started"
+            android:textSize="@dimen/sp16"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/exo_bold"
+            visible="@{!networkErrorValue}"
+            android:background="@drawable/ic_buttonbg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.88">
+        </Button>
+
+        <include
+            android:id="@+id/networkError"
+            layout="@layout/network_error"
+            visible="@{networkErrorValue}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

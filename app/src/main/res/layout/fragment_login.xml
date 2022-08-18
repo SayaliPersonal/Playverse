@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="phoneNoValid"
+            type="boolean" />
+
+        <variable
+            name="networkErrorValue"
+            type="boolean" />
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp30"
+                android:src="@drawable/img_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvGetStarted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp140"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/lets_get_started"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp28"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvEnterNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/enter_no_to_continue"
+                android:textColor="#99ffffff"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintEnd_toEndOf="@+id/tvGetStarted"
+                app:layout_constraintStart_toStartOf="@+id/tvGetStarted"
+                app:layout_constraintTop_toBottomOf="@+id/tvGetStarted" />
+
+
+            <TextView
+                android:id="@+id/tvValidPhoneNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/enter_valid_phone_no"
+                android:textColor="@color/error"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintStart_toStartOf="@+id/etPhoneNo"
+                app:layout_constraintTop_toBottomOf="@+id/etPhoneNo" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp45"
+                android:background="@drawable/bg_edittext_login"
+                android:digits="1234567890"
+                android:fontFamily="@font/oxygen_bold"
+                android:gravity="center_vertical|start"
+                android:hint="@string/phone_no"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/dp19"
+                android:paddingStart="@dimen/dp64"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="#4dffffff"
+                android:textCursorDrawable="@color/white"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEnterNo" />
+
+            <TextView
+                android:id="@+id/tvCountryCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp24"
+                android:fontFamily="@font/oxygen_bold"
+                android:gravity="center_vertical|end"
+                android:includeFontPadding="false"
+                android:text="@string/country_code"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintBottom_toBottomOf="@+id/etPhoneNo"
+                app:layout_constraintStart_toStartOf="@+id/etPhoneNo"
+                app:layout_constraintTop_toTopOf="@+id/etPhoneNo" />
+
+            <ImageView
+                android:id="@+id/ivPhoneNoValid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/dp16"
+                app:layout_constraintBottom_toBottomOf="@+id/etPhoneNo"
+                app:layout_constraintEnd_toEndOf="@+id/etPhoneNo"
+                app:layout_constraintTop_toTopOf="@+id/etPhoneNo" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                visible="@{!networkErrorValue}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp16"
+                android:background="@{phoneNoValid ? @drawable/btn_login_activate : @drawable/bg_btn_login}"
+                android:enabled="@{phoneNoValid ? true : false}"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/get_otp_login"
+                android:textAllCaps="false"
+                android:layout_marginTop="@dimen/dp16"
+                android:textColor="@{phoneNoValid?@color/white:@color/off_white}"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintStart_toStartOf="@id/tvValidPhoneNo"
+                app:layout_constraintEnd_toEndOf="@id/etPhoneNo"
+                app:layout_constraintTop_toBottomOf="@id/tvValidPhoneNo"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRefrralCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:visibility="gone"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/_92xxxxx490_referral_code_applied"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp12"
+                android:padding="@dimen/dp10"
+                android:background="@drawable/textview_round"
+                android:layout_marginHorizontal="@dimen/dp16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCross"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp20"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/dp16"
+                android:src="@drawable/cross"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRefrralCode"
+                app:layout_constraintEnd_toEndOf="@+id/tvRefrralCode"
+                app:layout_constraintTop_toTopOf="@+id/tvRefrralCode" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReferral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp16"
+                android:fontFamily="@font/exo_bold"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:text="@string/apply_referral_code"
+                android:layout_marginTop="@dimen/dp16"
+                android:textSize="@dimen/sp16"
+                android:background="@drawable/ic_img_referral"
+                app:layout_constraintBottom_toTopOf="@+id/tvTermsPrivacy" />
+
+            <TextView
+                android:id="@+id/tvTermsPrivacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp32"
+                android:fontFamily="@font/oxygen_regular"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/dp16"
+                android:text="@string/terms_privacy_policy"
+                android:textColor="@color/white_opacity60"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/btnLogin"
+                app:layout_constraintStart_toStartOf="@+id/btnLogin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="590dp" />
+
+            <include
+                android:id="@+id/networkError"
+                layout="@layout/network_error"
+                visible="@{networkErrorValue}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</layout>

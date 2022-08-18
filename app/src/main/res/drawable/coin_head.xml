@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:width="@dimen/dp40"
+        android:height="@dimen/dp40"
+        android:drawable="@drawable/coin_header"
+        android:gravity="center"
+        tools:ignore="UnusedAttribute" />
+</layer-list>

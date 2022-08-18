@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#00ffffff</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="off_black">#85000000</color>
+    <color name="gray">#857C7272</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="off_white">#99FFFFFF</color>
+    <color name="color_transparent">#00FFFFFF</color>
+    <color name="golden">#FFD700</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="alertEndColor">#dae3e9</color>
+    <color name="purplecolor">#580066</color>
+    <color name="bluecolor">#377FFF</color>
+    <color name="goldencolor">#190F00</color>
+    <color name="golden_color">#FFBA00</color>
+    <color name="card_gold">#FFBB38</color>
+    <color name="card_transaparent">#20FFFFFF</color>
+
+    <color name="tabIndicator">#005BFF</color>
+    <color name="error">#FF4D74</color>
+    <color name="white_opacity60">#99FFFFFF</color>
+    <color name="white_opacity50">#80FFFFFF</color>
+    <color name="white_opacity20">#33FFFFFF</color>
+    <color name="white_opacity30">#4DFFFFFF</color>
+    <color name="white_opacity80">#CCFFFFFF</color>
+    <color name="white_opacity10">#1AFFFFFF</color>
+    <color name="white_opacity70">#B2FFFFFF</color>
+    <color name="white_opacity90">#E5FFFFFF</color>
+    <color name="date">#FFFCFC</color>
+    <color name="divider">#D9D9D9</color>
+    <color name="taupe_gray">#898989</color>
+    <color name="divider_clr">#14FFFFFF</color>
+
+    <color name="trans_history_des">#9CFFFCFC</color>
+    <color name="success">#5DC389</color>
+    <color name="neutral">#8F99A3</color>
+</resources>

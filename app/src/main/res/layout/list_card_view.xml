@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="@dimen/dp12"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardCornerRadius="@dimen/dp15"
+        card_view:cardElevation="@dimen/dimen_0dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp220">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:scaleType="fitXY"
+                android:id="@+id/constraint_image"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0dp"
+                android:alpha=".9"
+                android:background="#0D1370"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_game_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/transaction_detail"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_developed_by"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oxygen_regular"
+                    android:text="@string/by_supergaming_indie_studio"
+                    android:textColor="@color/off_white"
+                    android:textSize="@dimen/sp12"
+                    android:layout_marginBottom="@dimen/dp16"
+                    app:layout_constraintStart_toStartOf="@id/txt_game_name"
+                    app:layout_constraintTop_toBottomOf="@id/txt_game_name" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_summery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp16"
+                    android:fontFamily="@font/oxygen_regular"
+                    android:text="@string/_60k_playing"
+                    android:drawablePadding="@dimen/dp10"
+                    android:lineSpacingExtra="@dimen/sp2"
+                    android:drawableLeft="@drawable/ic_user_small"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_game_name"
+                    app:layout_constraintTop_toTopOf="@id/txt_game_name"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt__processing_fee_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oxygen_regular"
+                    android:text="@string/_121_m_gameplays"
+                    android:drawablePadding="@dimen/dp10"
+                    android:lineSpacingExtra="@dimen/sp2"
+                    android:drawableLeft="@drawable/ic_time_small"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_developed_by"
+                    app:layout_constraintEnd_toEndOf="@id/txt_summery"
+                    app:layout_constraintTop_toBottomOf="@id/txt_summery"
+                    app:layout_constraintTop_toTopOf="@id/txt_developed_by" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.65" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+        #0D1370BD-->

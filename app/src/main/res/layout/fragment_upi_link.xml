@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_upi_link_account">
+
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp62"
+            android:src="@drawable/iv_back_with_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLinkUpiAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/link_upi_address"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200dp"
+            android:layout_marginTop="@dimen/dp56"
+            app:cardCornerRadius="@dimen/dp10"
+            android:elevation="@dimen/dp8"
+            android:alpha=".3"
+            android:layout_marginHorizontal="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLinkUpiAd" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".2"
+                android:background="@drawable/bg_white_blur_new"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvEnterUpi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/enter_upi_id"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp14"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginStart="@dimen/dp18"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toTopOf="@+id/card" />
+
+
+        <EditText
+            android:id="@+id/etEnterUpi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:hint="@string/enter_upi_id_hint"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@drawable/border_white"
+            android:textColorHint="@color/white_opacity20"
+            android:textSize="@dimen/sp18"
+            android:paddingStart="@dimen/dp18"
+            android:paddingVertical="@dimen/dp12"
+            android:layout_marginHorizontal="@dimen/dp18"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnterUpi" />
+
+        <Button
+            android:id="@+id/btnLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_login_activate"
+            android:text="@string/link"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/exo_bold"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="@+id/etEnterUpi"
+            app:layout_constraintStart_toStartOf="@+id/etEnterUpi"
+            app:layout_constraintTop_toBottomOf="@+id/etEnterUpi" />
+
+
+
+        <TextView
+            android:id="@+id/tvImpNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/important_note"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp32"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toBottomOf="@+id/card" />
+
+        <ImageView
+            android:id="@+id/ivImpNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_imp_note"
+            android:layout_marginStart="@dimen/dp6"
+            app:layout_constraintBottom_toBottomOf="@+id/tvImpNote"
+            app:layout_constraintStart_toEndOf="@+id/tvImpNote"
+            app:layout_constraintTop_toTopOf="@+id/tvImpNote" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/important_note_description"
+            android:textSize="@dimen/sp14"
+            android:lineSpacingExtra="4sp"
+            android:textColor="@color/white_opacity60"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp8"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvImpNote" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp140"
+            android:src="@drawable/ic_profile_details"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,68 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/ic_bgcoin"
+        android:drawableLeft="@drawable/coin_head"
+        android:fontFamily="@font/exo_bold"
+        android:gravity="center"
+        android:paddingRight="@dimen/dp5"
+        android:text=""
+        android:textSize="@dimen/sp14"
+        android:layout_marginEnd="@dimen/dp24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="@dimen/dp5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/sliding_tabs"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="#777373"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorColor="#FF016DD5"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabTextAppearance="@style/tabTextStyleHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/prize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp5"
+            android:text=""
+            android:visibility="gone"
+            android:fontFamily="@font/exo_bold"
+            android:textSize="@dimen/sp14"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp5"
+            android:paddingRight="@dimen/dp5"
+            android:drawableLeft="@drawable/coin_tour"
+            app:layout_constraintStart_toStartOf="@+id/coin"
+            android:background="@drawable/ic_bgcoin"  />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

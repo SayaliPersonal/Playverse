@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp125"
+        android:layout_marginTop="@dimen/dp16"
+        card_view:cardBackgroundColor="#20FFFFFF"
+        card_view:cardCornerRadius="@dimen/dp10"
+        card_view:cardElevation="@dimen/dimen_0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1.4">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_card_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oxygen_bold"
+                    android:text=""
+                    android:maxLines="2"
+                    android:textAllCaps="false"
+                    android:lineSpacingExtra="-1sp"
+                    android:textColor="@color/white"
+                    android:lineHeight="@dimen/sp19"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginTop="@dimen/dp18"
+                    android:layout_marginLeft="@dimen/dp24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/gameFreePlay"
+                    android:layout_width="@dimen/dp119"
+                    android:layout_height="@dimen/dp33"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginLeft="@dimen/dp24"
+                    android:textSize="@dimen/sp12"
+                    android:lineHeight="@dimen/sp14"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/exo_bold"
+                    android:background="@drawable/ic_button_freeplay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/dp23">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dimen_118dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_multi_coinss"
+                    card_view:layout_constraintBottom_toBottomOf="@id/txt_card"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

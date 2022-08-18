@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/ivNoTrans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_trans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNoTrans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/no_trans_history"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivNoTrans" />
+
+        <TextView
+            android:id="@+id/tvNoTransYet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_regular"
+            android:text="@string/looks_no_transaction_yet"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            android:layout_marginTop="@dimen/dp12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoTrans" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_blue_btn"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/try_again"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            android:layout_marginTop="@dimen/dp24"
+            app:layout_constraintEnd_toEndOf="@+id/tvNoTransYet"
+            app:layout_constraintStart_toStartOf="@+id/tvNoTransYet"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoTransYet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

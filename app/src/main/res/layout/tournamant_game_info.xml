@@ -1,0 +1,112 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_player"
+        android:layout_width="@dimen/dp25"
+        android:layout_height="@dimen/dp25"
+        android:src="@drawable/ic_watch"
+        android:layout_marginRight="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/img_game_plays"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/txt_playerTitle"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/exo_bold"
+        android:text="112K"
+        android:lineHeight="@dimen/sp19"
+        android:layout_marginStart="@dimen/dp7"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintTop_toTopOf="@id/img_player"
+        app:layout_constraintStart_toEndOf="@id/img_player"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_playerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="@dimen/sp2"
+        android:text="@string/game_plays"
+        android:fontFamily="@font/exo_regular"
+        android:textColor="@color/white_opacity50"
+        android:textSize="@dimen/sp12"
+        android:lineHeight="@dimen/sp14"
+        android:layout_marginStart="@dimen/dp7"
+        app:layout_constraintStart_toEndOf="@id/img_player"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_game_plays"
+        android:layout_width="@dimen/dp25"
+        android:layout_height="@dimen/dp25"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="@dimen/dp50"
+        android:src="@drawable/ic_player"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@+id/img_player"
+        app:layout_constraintRight_toLeftOf="@+id/img_game_won"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView2"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/exo_bold"
+        android:text="112K"
+        android:lineHeight="@dimen/sp19"
+        android:layout_marginStart="@dimen/dp7"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_game_plays"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_game_plays"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="@dimen/sp2"
+        android:text="@string/players"
+        app:lineHeight="@dimen/sp14"
+        android:layout_marginStart="@dimen/dp6"
+        android:fontFamily="@font/exo_regular"
+        android:textColor="@color/white_opacity50"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toEndOf="@id/img_game_plays"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_game_won"
+        app:layout_constraintLeft_toRightOf="@+id/img_game_plays"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed">
+
+        <include layout="@layout/stats_card"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp22"
+        android:textSize="@dimen/sp12"
+        android:id="@+id/btnEntryFee"
+        android:fontFamily="@font/exo_bold"
+        android:layout_marginTop="@dimen/dp23"
+        android:textAllCaps="false"
+        android:background="@drawable/ic_btn_bg_golden"
+        app:layout_constraintTop_toBottomOf="@id/txt_playerTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

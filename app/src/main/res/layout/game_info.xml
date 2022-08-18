@@ -1,0 +1,119 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+   <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/img_player"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/ic_player"
+       app:layout_constraintRight_toLeftOf="@+id/img_game_plays"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <androidx.appcompat.widget.AppCompatTextView
+       android:id="@+id/textView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="11dp"
+       android:text=""
+       android:fontFamily="@font/exo_bold"
+       android:textColor="@color/white"
+       android:textSize="20sp"
+       app:layout_constraintStart_toStartOf="@id/img_player"
+       app:layout_constraintEnd_toEndOf="@id/img_player"
+       app:layout_constraintTop_toBottomOf="@id/img_player"/>
+
+   <androidx.appcompat.widget.AppCompatTextView
+       android:id="@+id/txt_playerTitle"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:text="Players"
+       android:fontFamily="@font/oxygen_regular"
+       android:lineSpacingExtra="2sp"
+       android:textColor="@color/trans_history_des"
+       android:textSize="12sp"
+       app:layout_constraintStart_toStartOf="@id/textView"
+       app:layout_constraintEnd_toEndOf="@id/textView"
+       app:layout_constraintTop_toBottomOf="@id/textView" />
+
+   <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/img_game_plays"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/ic_watch"
+       app:layout_constraintRight_toLeftOf="@+id/img_game_won"
+       app:layout_constraintVertical_chainStyle="packed"
+       app:layout_constraintLeft_toRightOf="@+id/img_player"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <androidx.appcompat.widget.AppCompatTextView
+       android:id="@+id/textView2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="11dp"
+       android:text=""
+       android:fontFamily="@font/exo_bold"
+       android:textColor="@color/white"
+       android:textSize="20sp"
+       app:layout_constraintStart_toStartOf="@id/img_game_plays"
+       app:layout_constraintEnd_toEndOf="@id/img_game_plays"
+       app:layout_constraintTop_toBottomOf="@id/img_game_plays"/>
+
+   <androidx.appcompat.widget.AppCompatTextView
+       android:id="@+id/txt_game_plays"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:text="@string/game_plays"
+       android:fontFamily="@font/oxygen_regular"
+       android:lineSpacingExtra="2sp"
+       android:textColor="@color/trans_history_des"
+       android:textSize="12sp"
+       app:layout_constraintStart_toStartOf="@id/textView2"
+       app:layout_constraintEnd_toEndOf="@id/textView2"
+       app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+   <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/img_game_won"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/ic_camera"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintVertical_chainStyle="packed"
+       app:layout_constraintLeft_toRightOf="@id/img_game_plays"
+       app:layout_constraintTop_toTopOf="@id/img_game_plays"
+       app:layout_constraintBottom_toBottomOf="@+id/img_game_plays"/>
+
+   <androidx.appcompat.widget.AppCompatTextView
+       android:id="@+id/textView3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text=""
+       android:fontFamily="@font/exo_bold"
+       android:textColor="@color/white"
+       android:textSize="20sp"
+       app:layout_constraintTop_toTopOf="@id/textView2"
+       app:layout_constraintBottom_toBottomOf="@id/textView2"
+       app:layout_constraintStart_toStartOf="@id/img_game_won"
+       app:layout_constraintEnd_toEndOf="@id/img_game_won"
+       app:layout_constraintTop_toBottomOf="@id/img_game_won"/>
+
+   <androidx.appcompat.widget.AppCompatTextView
+       android:id="@+id/txt_game_won"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:text="Won"
+       android:fontFamily="@font/oxygen_regular"
+       android:lineSpacingExtra="2sp"
+       android:textColor="@color/trans_history_des"
+       android:textSize="12sp"
+       app:layout_constraintStart_toStartOf="@id/textView3"
+       app:layout_constraintEnd_toEndOf="@id/textView3"
+       app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

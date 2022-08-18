@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+   <!-- <ImageView
+        android:id="@+id/blurImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/dd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <ImageView
+        android:id="@+id/btDismissCustomDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp32"
+        android:src="@drawable/ic_cancel_pop"
+        android:layout_marginBottom="@dimen/dp15"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/ic_pop_upframe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/sp18"
+        android:textColor="@color/white_opacity80"
+        android:fontFamily="@font/exo_regular"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        android:text="@string/entry_fee" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp50"
+        android:textSize="@dimen/sp36"
+        android:textColor="@color/white"
+        android:fontFamily="@font/exo_bold"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/entry"
+        android:text="@string/amount_popup" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp7"
+        android:layout_marginStart="@dimen/dp100"
+        tools:layout_editor_absoluteY="107dp"
+        android:layout_marginTop="@dimen/dp40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.612"
+        android:background="@drawable/ic_popup_frame">
+    <TextView
+        android:id="@+id/tvbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oxygen_regular"
+        android:textSize="@dimen/sp14"
+        android:textColor="@color/white_opacity70"
+        android:text="@string/cash_balance"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivbalanceprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_coin_popup"
+        android:layout_marginStart="@dimen/dp2"
+        app:layout_constraintEnd_toStartOf="@+id/tvbalanceprice"
+        app:layout_constraintStart_toEndOf="@+id/tvbalance" />
+
+    <TextView
+        android:id="@+id/tvbalanceprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/exo_bold"
+        android:textSize="@dimen/sp14"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/ivbalanceprice"
+        android:text="--" />
+</LinearLayout>
+    <TextView
+        android:id="@+id/tvDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="116dp"
+        android:fontFamily="@font/oxygen_regular"
+        android:textColor="@color/white_opacity70"
+        android:textSize="@dimen/sp14"
+        android:layout_marginStart="@dimen/dp50"
+        android:layout_marginEnd="@dimen/dp50"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        android:text="@string/pop_up_text1" />
+
+    <TextView
+        android:id="@+id/tvdesc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/oxygen_regular"
+        android:textColor="@color/white_opacity70"
+        android:textSize="@dimen/sp14"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginStart="@dimen/dp50"
+        android:layout_marginEnd="@dimen/dp50"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetails"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        android:text="@string/pop_up_text2" />
+
+    <Button
+        android:id="@+id/pop_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp36"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginStart="@dimen/dp40"
+        android:layout_marginEnd="@dimen/dp40"
+        android:layout_marginBottom="@dimen/dp20"
+        android:fontFamily="@font/exo_bold"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tvdesc"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        android:background="@drawable/ic_lets_play"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

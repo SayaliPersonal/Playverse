@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvUpdated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toast_msg"
+        android:fontFamily="@font/oxygen_bold"
+        android:paddingVertical="@dimen/dp25"
+        android:text="@string/username_updated"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        android:paddingStart="@dimen/dp16"
+        android:drawablePadding="@dimen/dp16"
+        android:layout_marginHorizontal="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp27"
+        app:drawableStartCompat="@drawable/login_mobile_verify_tick"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

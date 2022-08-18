@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:drawable="@drawable/ic_highlighter"
+                android:top="@dimen/dp36" android:left="@dimen/dp16"
+                android:right="@dimen/dp16"/>
+        </layer-list>
+    </item>
+
+</selector>

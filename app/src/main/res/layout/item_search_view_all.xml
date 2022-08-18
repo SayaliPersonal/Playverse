@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp197"
+        android:src="@drawable/cover"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/dp32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/searchRoundedImage" />
+
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:alpha=".5"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMain"
+        app:layout_constraintEnd_toEndOf="@+id/imgMain"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp10"
+        android:fontFamily="@font/exo_bold"
+        android:text="Crossy Road"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintStart_toStartOf="@+id/imgMain"
+        app:layout_constraintTop_toTopOf="@+id/textView25" />
+
+
+    <TextView
+        android:id="@+id/tvDeveloperName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp4"
+        android:fontFamily="@font/oxygen_regular"
+        android:text="by Epic Games"
+        android:textColor="@color/white_opacity60"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="@+id/tvGameName"
+        app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+
+    <TextView
+        android:id="@+id/tvPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp42"
+        android:fontFamily="@font/oxygen_regular"
+        android:text="60K Playing"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="@+id/textView25"
+        app:layout_constraintTop_toTopOf="@+id/tvGameName" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="@dimen/dp10"
+        android:layout_height="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp8"
+        android:src="@drawable/ic_player"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlaying"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlaying"
+        app:layout_constraintTop_toTopOf="@+id/tvPlaying" />
+
+    <TextView
+        android:id="@+id/tvGamePlays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oxygen_regular"
+        android:text="121 M Gameplays"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="@+id/tvPlaying"
+        app:layout_constraintTop_toBottomOf="@+id/tvGameName" />
+
+    <ImageView
+        android:layout_width="@dimen/dp10"
+        android:layout_height="@dimen/dp10"
+        android:src="@drawable/ic_watch"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGamePlays"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/tvGamePlays" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

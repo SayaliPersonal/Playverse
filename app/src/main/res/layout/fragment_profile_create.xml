@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="validUserName"
+            type="boolean" />
+
+
+            <variable
+                name="networkErrorValue"
+                type="boolean" />
+
+
+        <variable
+            name="viewModel"
+            type="com.robosoft.playverse.feature.presentation.viewModel.LoginViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_upi_link_account">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile_create_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCreateProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp72"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/create_profile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp28"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp20"
+                android:src="@drawable/img_close"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCreateProfile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvCreateProfile" />
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp44"
+            android:src="@drawable/ic_avatar_create_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCreateProfile" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfilePicture"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp150"
+                android:scaleType="centerCrop"
+                imageUriCircle="@{viewModel.profilePicUri}"
+                app:layout_constraintBottom_toBottomOf="@+id/ivAvatar"
+                app:layout_constraintEnd_toEndOf="@+id/ivAvatar"
+                app:layout_constraintStart_toStartOf="@+id/ivAvatar"
+                app:layout_constraintTop_toTopOf="@+id/ivAvatar"
+                app:shapeAppearance="@style/roundedAppearance"
+                tools:src="@drawable/bg_avatar_profile" />
+
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:layout_marginBottom="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp10"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAvatar"
+            app:layout_constraintEnd_toEndOf="@+id/ivAvatar"
+            app:layout_constraintStart_toEndOf="@+id/tvCreateProfile" />
+
+
+        <TextView
+            android:id="@+id/tvSetUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/set_username_avatar"
+            android:layout_marginTop="@dimen/dp32"
+            android:layout_marginStart="@dimen/dp16"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAvatar" />
+
+        <TextView
+            android:id="@+id/tvChooseUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/choose_username_for_account"
+            android:textColor="@color/white_opacity80"
+            android:textSize="@dimen/sp14"
+            android:layout_marginTop="@dimen/dp24"
+            android:paddingHorizontal="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSetUsername" />
+
+            <TextView
+                android:id="@+id/tvBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_login"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:alpha=".3"
+                android:layout_marginTop="@dimen/dp24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingTop="@dimen/dp15"
+                android:paddingBottom="@dimen/dp18"
+                app:layout_constraintTop_toBottomOf="@+id/tvChooseUserName"/>
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:gravity="center_vertical|start"
+            android:background="@null"
+            android:hint="@string/type_your_username"
+            android:maxLines="1"
+            android:maxLength="20"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:paddingStart="@dimen/dp16"
+            android:paddingVertical="@dimen/dp15"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:inputType="textPersonName"
+            android:focusable="true"
+            android:focusedByDefault="true"
+            android:textColorHint="@color/white_opacity20"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChooseUserName" />
+
+            <TextView
+                android:id="@+id/tvErrorMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/username_must_start_with_character"
+                android:textColor="@color/error"
+                android:textSize="@dimen/sp12"
+                android:layout_marginTop="@dimen/dp10"
+                app:layout_constraintStart_toStartOf="@+id/etUsername"
+                app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+            <ImageView
+                android:id="@+id/ivError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/dp16"
+                app:layout_constraintBottom_toBottomOf="@+id/etUsername"
+                app:layout_constraintEnd_toEndOf="@+id/etUsername"
+                app:layout_constraintTop_toTopOf="@+id/etUsername" />
+
+
+            <TextView
+                android:id="@+id/tvUsernameUpdated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toast_msg"
+                android:fontFamily="@font/oxygen_bold"
+                android:paddingVertical="@dimen/dp25"
+                android:text="@string/username_updated"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp14"
+                android:visibility="gone"
+                android:paddingStart="@dimen/dp16"
+                android:drawablePadding="@dimen/dp16"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp27"
+                app:drawableStartCompat="@drawable/login_mobile_verify_tick"
+                app:layout_constraintBottom_toTopOf="@+id/btnConfirmUsername" />
+
+            <Button
+                android:id="@+id/btnConfirmUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp32"
+                visible="@{!networkErrorValue}"
+                android:layout_marginHorizontal="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp100"
+                android:background="@{validUserName ? @drawable/btn_login_activate : @drawable/bg_btn_login}"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/confirm_username"
+                android:enabled="@{validUserName ? true : false}"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+            <include
+                android:id="@+id/networkError"
+                layout="@layout/network_error"
+                visible="@{networkErrorValue}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+
+            <ProgressBar
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+                android:indeterminateTint="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</layout>

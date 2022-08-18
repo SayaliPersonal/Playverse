@@ -1,0 +1,305 @@
+<resources>
+    <string name="app_name">Playverse</string>
+
+    //Login
+    <string name="lets_get_started">Let’s get started</string>
+    <string name="enter_no_to_continue">Please enter your number to continue</string>
+    <string name="phone_no">Phone number</string>
+    <string name="get_otp_login">Get OTP and login</string>
+    <string name="country_code">+91</string>
+    <string name="phone_no_with_country_code">+91 %s</string>
+    <string name="terms_privacy_policy">By continuing I hereby confirm I am 18 years of age and I agree to the Terms of Service &amp; Privacy Policy</string>
+    <string name="we_sent_verification_code">We have sent a verification code to</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="just_for_verification">This is just for verification. We won’t call you or give your number to anyone.</string>
+    <string name="mobile_no">+91 8073324533</string>
+    <string name="enter_valid_phone_no">Please enter valid phone number</string>
+    <string name="enter_correct_otp">Please enter the correct OTP</string>
+    <string name="max_limit_reached_for_otp_verification">Max limit reached for this otp verification</string>
+
+    //Setup avatar and username
+    <string name="create_profile">Create profile</string>
+    <string name="set_username_avatar">Setup your username &amp; avatar</string>
+    <string name="choose_username_for_account">Choose a username for your account. You can always change it later</string>
+    <string name="type_your_username">Type your username</string>
+    <string name="lets_start_playing">Let’s start playing</string>
+    <string name="confirm_username">Confirm username</string>
+    <string name="username_not_available">The username %s is not available</string>
+    <string name="username_must_start_with_character">Invalid Username</string>
+
+    //Profile
+    <string name="low_stake_tournament">Low stake tournament</string>
+    <string name="high_stake_tournament">High stake tournament</string>
+    <string name="time">0d : 0h : 0m</string>
+    <string name="your_rank">Your Rank </string>
+    <string name="current_high_score">Current High score</string>
+    <string name="continue_playing">Continue playing</string>
+    <string name="tournaments">Tournaments</string>
+    <string name="referrals">Referrals</string>
+    <string name="no_tournament_played">No tournament played</string>
+    <string name="play_tournaments_and_earn_rewards">Play tournaments and earn awesome rewards</string>
+    <string name="start_playing">Start playing</string>
+    <string name="just_points">Just <font color='white'>%s</font> points</string>
+    <string name="more_to_win">more to win ₹<font color='white'>%s</font></string>
+    <string name="view_standings">View standings</string>
+    <string name="select_avatar">Select avatar</string>
+    <string name="confirm_avatar">Confirm avatar</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="edit_username_and_avatar">Edit your username &amp; avatar</string>
+    <string name="choose_an_avatar">Choose an avatar</string>
+    <string name="username_updated">Username has been updated</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="or_win_big_in_the_tournaments">Or win big in the tournaments</string>
+    <string name="win_big_in_the_tournaments">Win big in the tournaments</string>
+    <string name="guaranteed_rewards_up_to_rank">Guaranteed rewards up to rank</string>
+    <string name="win_upto">Win upto</string>
+    <string name="recent_games">Recent Games</string>
+    <string name="_23">23</string>
+    <string name="just_117_points_more_to_win_u00e2_u0082_u00b950">Just 117 points more to win â¹50</string>
+    <string name="_14">140</string>
+    <string name="_1d_33h_25m">1d : 33h : 25m</string>
+    <string name="game_modes">Game Modes</string>
+    <string name="hall_of_fame">Hall of Fame</string>
+    <string name="air_fortress">Air Fortress</string>
+    <string name="by_supergaming_indie_studio">by Supergaming Indie Studio</string>
+    <string name="_20k">20K</string>
+    <string name="players">Players</string>
+    <string name="_1_1_m">1.1 M</string>
+    <string name="game_plays">Gameplays</string>
+    <string name="_2_l">2 L</string>
+    <string name="won">Won</string>
+    <string name="_1st">1st</string>
+    <string name="omnibus">omnibus</string>
+    <string name="_2_8_k">2.8 K</string>
+    <string name="points">Points</string>
+    <string name="_3rd">3rd</string>
+    <string name="_2nd">2nd</string>
+    <string name="jaspreet">Jaspreet</string>
+    <string name="sheevali">Sheevali</string>
+    <string name="_1_4_k">1.4 K</string>
+    <string name="lord_of_gameplays">Lord of Gameplays</string>
+    <string name="gamers_with_maximum_number_off_gameplays_in_air_fortress">Gamers with maximum number off gameplays in air fortress</string>
+    <string name="play_for_20">Play for </string>
+    <string name="view_top_100">View Top 100</string>
+    <string name="beat_the_high_score">Beat the high score</string>
+    <string name="get_unlimited_number_of_tries_to_beat_the_high_score_and_stay_on_top_of_the_leaderboard">Get unlimited number of tries to beat the high score and stay on top of the leaderboard</string>
+    <string name="_01">01</string>
+    <string name="sunil">Sunil</string>
+    <string name="_1000">1000</string>
+    <string name="rewards">Rewards</string>
+    <string name="reward_">Reward!</string>
+    <string name="current_standing">Current Standing</string>
+    <string name="date_format">%s %s %s</string>
+    <string name="rewards_are_distributed_once_the_tournament_ends_depending_on_your_final_rank">Rewards are distributed once the tournament ends depending on your final rank</string>
+
+
+    //Add Cash
+    <string name="add_cash">Add cash</string>
+    <string name="amount">Amount</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="rupees">₹</string>
+    <string name="proceed">Proceed</string>
+    <string name="or">Or</string>
+    <string name="guaranteed_cashback">Guaranteed cashback</string>
+    <string name="recharge_with_popular_packs">Recharge with these popular packs and get assured cashbacks. Keep playing keep winning.</string>
+    <string name="limited_time">Limited time</string>
+    <string name="add_plus">+Add</string>
+    <string name="view_all">View All </string>
+    <string name="withdraw_success">Withdrawal successful </string>
+    <string name="cash_withdrawn">Cash withdrawn </string>
+    <string name="tds">TDS (@X%)</string>
+    <string name="amount_receive">Amount you will receive</string>
+    <string name="withdraw_method">Withdrawal method</string>
+    <string name="withdrwe_id">Withdrawal ID</string>
+    <string name="error_withdrawal">Withdraw cash amount should be more than ₹ 1 </string>
+    <string name="error_cash">Add cash amount should be more than ₹ 1</string>
+    <string name="error_withdrawal_exceed">Withdraw cash amount should not exceed ₹ %s</string>
+
+
+    //Link UPI ID
+    <string name="link_upi_address">Link UPI Address</string>
+    <string name="enter_upi_id">Enter the UPI ID to withdraw money</string>
+    <string name="enter_upi_id_hint">Enter UPI ID</string>
+    <string name="link">Link</string>
+    <string name="important_note">Important Note</string>
+    <string name="important_note_description">Make sure that you’re using an Indian phone number. To use Google Pay, you need to use an Indian phone number. Google Pay doesn’t work with international phone numbers.</string>
+    <string name="please_enter_valid_upi_id">Please enter valid UPI Id</string>
+
+    //pop_up_tournament
+    <string name="pop_up_text1">This fees is not refundable and will be deducted automatically from your wallet</string>
+    <string name="pop_up_text2">Pay once and get unlimited number of tries to register your high score</string>
+    <string name="entry_fee">Entry fee</string>
+    <string name="cash_balance">Cash balance :</string>
+    <string name="amount_popup">₹20</string>
+    <string name="coin_popup">₹30</string>
+
+
+    //My Funds
+    <string name="my_funds">My funds</string>
+    <string name="available_balance">Available balance</string>
+    <string name="deposited_cash">Deposited cash</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="winning_cash">Winning cash</string>
+    <string name="more_information">More information</string>
+    <string name="transaction_history">Transaction history</string>
+    <string name="transaction_history_des">Deposits, Withdrawals, Tax summaries  </string>
+    <string name="add_withdrawal_amount">Add withdrawal amount</string>
+    <string name="withdrawal_method">Withdrawal method</string>
+    <string name="use_upi_withdraw_more_than_5000">Use UPI when you withdraw more than ₹5000</string>
+    <string name="paytm_upi">Paytm UPI</string>
+    <string name="upi">UPI</string>
+    <string name="link_account">+  Link Account</string>
+    <string name="slide_to_continue">Slide to continue</string>
+    <string name="withdrawal_successful">Withdrawal Successful</string>
+    <string name="amount_transferred">Amount Transferred</string>
+    <string name="processing_fee">Processing Fee</string>
+    <string name="tds_x">TDS (@X%)</string>
+    <string name="amount_you_will_receive">Amount you will receive</string>
+    <string name="_328y589346583468">328Y589346583468</string>
+    <string name="withdrawal_id">Withdrawal ID</string>
+    <string name="summary">Summary</string>
+    <string name="need_help">Need help?</string>
+    <string name="go_back_home">Go back home</string>
+    <string name="transaction_detail">Transaction detail</string>
+    <string name="cash_added_successfully">Cash added successfully</string>
+    <string name="you_got">You got</string>
+    <string name="cash_added">Cash added</string>
+    <string name="wallet_balance">Wallet balance</string>
+    <string name="payment_time">Payment time</string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="_50_cashback">50 cashback</string>
+    <string name="_09_00_02_20_2021">09:00 - 02/20/2021</string>
+    <string name="_328Y589346583468">328Y589346583468</string>
+    <string name="deposits_withdrawals_tax_summaries">Deposits, Withdrawals, Tax summaries</string>
+    <string name="_60k_playing">60K Playing</string>
+    <string name="_121_m_gameplays">121 M Gameplays</string>
+    <string name="win_big_with_these_games">Win big with these games</string>
+    <string name="free_play">Free Play</string>
+
+    //Select Payment Mode
+    <string name="select_payment_mode">Select payment mode</string>
+    <string name="you_pay">You Pay</string>
+    <string name="payment_modes">Payment modes</string>
+    <string name="preferred_payment_methods">Preferred payment methods</string>
+    <string name="google_pay">Google Pay</string>
+    <string name="amazon_pay">Amazon Pay</string>
+    <string name="other_method">Other Method</string>
+    <string name="choose_from_other_method">Choose from other methods</string>
+    <string name="safe_and_secure_payments">Safe &amp; Secure Payments</string>
+
+    //no internet
+    <string name="no_internet">No internet connection!</string>
+    <string name="please_connect">Please connect to the internet and try again</string>
+    <string name="get_started">m Get Started</string>
+
+    <string name="your_score">Your Score</string>
+    <string name="free_game_play">Free Gameplay</string>
+    <string name="mid_stake_tournament">Mid stake tournament</string>
+    <string name="get_make">Make a score of</string>
+    <string name="and_get">and get</string>
+
+    <string name="take_a_photo">Take a photo</string>
+    <string name="upload_from_gallery">Upload from gallery</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+
+    <string name="tournamentDesc">Beat the high score and get rewards!</string>
+    <string name="playing"> Playing</string>
+    <string name="tournament"> Tournament</string>
+
+    //Transaction history
+    <string name="transactions_history">Transactions history</string>
+    <string name="all">All</string>
+    <string name="deposited">Deposited</string>
+    <string name="deposit">Deposit</string>
+    <string name="winnings">Winnings</string>
+    <string name="withdrawals">Withdrawals</string>
+    <string name="no_trans_history">No transaction history</string>
+    <string name="looks_no_transaction_yet">Looks like you have not made any transactions yet!</string>
+    <string name="try_again">Try Again</string>
+    <string name="game">Game:</string>
+    <string name="trans_status">Transaction Status : </string>
+    <string name="successful">Successful</string>
+    <string name="trans_id">Transaction ID:</string>
+
+    //Processing Request
+    <string name="payment_details">Payment details</string>
+    <string name="deposit_cash">Deposit cash:  ₹100</string>
+    <string name="mins_remaining">mins remaining</string>
+    <string name="open_upi_app_to_approve_request">Open your UPI app to approve the\n payment request before the timer\n runs out</string>
+    <string name="cancel_payment">Cancel payment</string>
+    <string name="dash">-</string>
+    <string name="settings_app">App Settings</string>
+    <string name="policy_privacy">Privacy Policy</string>
+    <string name="terms_and_condition">Terms and conditions</string>
+    <string name="logout">Logout</string>
+
+    //Exit
+    <string name="exit_game">Exit game?</string>
+    <string name="quit">Quit</string>
+    <string name="are_you_sure_want_quit_the_game">Are you sure you want to quit the game. Any\n score made in this gameplay will not be counted.</string>
+    <string name="logout_">Logout?</string>
+    <string name="logout_des">Are you sure you want to logout? You will need to\n enter your mobile again to log-in.</string>
+    <string name="yes_logout">Yes, Logout</string>
+    <string name="congrats_you_have_the_highest_score">Congrats! You have\n the highest score</string>
+    <string name="total_referrals">Total referrals</string>
+    <string name="total_rewards">Total Rewards</string>
+    <string name="share_your_unique_referral_link">Share your unique referral link</string>
+    <string name="more_options">More Options</string>
+    <string name="share_via">Share via</string>
+    <string name="your_referrals">Your referrals</string>
+    <string name="apratim">apratim</string>
+    <string name="joined_on_1_may">Joined on 1 May</string>
+    <string name="how_referral_works">How referral works</string>
+    <string name="want_to_earn_some_free_cash_n_easy">Want to earn some free cash?\n Easy!</string>
+    <string name="share_this_link_with_your_friend_and_after_they_install_both_of_you_get_cash_rewards">Share this link with your friend and after they install, both of you get cash rewards.</string>
+    <string name="share_referral_link">Share referral link</string>
+    <string name="use_the_buttons_below_to_invite">use the buttons below to invite</string>
+    <string name="get_100">Get 100</string>
+    <string name="when_a_friend_registers_using_your_code">when a friend registers using your code</string>
+    <string name="get_50">Get 50</string>
+    <string name="when_they_make_their_first_deposit">when they make their first deposit</string>
+    <string name="get_20">Get 20</string>
+    <string name="when_they_participate_in_a_tournament">when they participate in a tournament</string>
+    <string name="_100">100</string>
+    <string name="_200">200</string>
+    <string name="_500">500</string>
+    <string name="_2000">2000</string>
+    <string name="apply_referral_code">Apply referral code</string>
+    <string name="apply_code_to_get_rewards">Apply code to get rewards</string>
+    <string name="enter_friend_referral_code_to_get_50_deposit_cash">Enter friend Referral code to get 50 deposit cash</string>
+    <string name="enter_referral_code">Enter referral code</string>
+    <string name="apply">Apply</string>
+    <string name="referral_code_applied_you_will_get_10_deposit_cash_on_logging_in">92XXXXX490 referral code applied! You will get 10 deposit cash on logging in</string>
+
+    <string name="cash">₹ %s</string>
+    <string name="view_top_hundred">View Top 100</string>
+    <string name="king_scores">King scorer</string>
+    <string name="rewards_maverick">Rewards Maverick</string>
+    <string name="_92xxxxx490_referral_code_applied">92XXXXX490 Referral code applied!</string>
+    <string name="change_referral_code">Change referral code</string>
+    <string name="min_max">Min ₹1  - Max ₹ %s</string>
+    <string name="dashhome">-</string>
+
+    //Search
+    <string name="search">Search</string>
+    <string name="game_tournaments">Games, Tournament and More</string>
+    <string name="recently_played">Recently played</string>
+    <string name="discover">Discover</string>
+    <string name="featured_games">Featured games</string>
+    <string name="try_something_new">Try something new </string>
+    <string name="title_file_download">Download</string>
+    <string name="downloading">downloading</string>
+    <string name="storage_permission_denied">storage_permission_denied</string>
+    <string name="storage_access_required">storage_permission_required</string>
+    <string name="ok">Ok</string>
+    <string name="label_root_detect_title">label_root_detect_title</string>
+    <string name="label_root_detect_message">label_root_detect_message</string>
+    <string name="label_root_detect_dismiss">label_root_detect_dismiss</string>
+
+
+    <string name="update_app_url">update_app_url</string>
+    <string name="notification_description">notification_description</string>
+
+</resources>

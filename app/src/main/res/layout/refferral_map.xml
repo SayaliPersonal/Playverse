@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp100"
+            android:layout_height="@dimen/dp340"
+            android:id="@+id/road_map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/road_works">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvShareReferralLink"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/share_referral_link"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:layout_marginStart="@dimen/dp20"
+            app:layout_constraintStart_toEndOf="@id/road_map"
+            android:lineHeight="@dimen/sp16"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddCash"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/use_the_buttons_below_to_invite"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toBottomOf="@id/tvShareReferralLink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvShareReferralLink"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGetAmt"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/get_100"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp42"
+            android:lineHeight="@dimen/sp16"
+            app:layout_constraintTop_toBottomOf="@id/tvAddCash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvAddCash"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGetAmtDes"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/when_a_friend_registers_using_your_code"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toBottomOf="@id/tvGetAmt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvGetAmt"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGetAmt50"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/get_50"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp42"
+            android:lineHeight="@dimen/sp16"
+            app:layout_constraintTop_toBottomOf="@id/tvGetAmtDes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvGetAmtDes"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGetAmt50Des"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/when_they_make_their_first_deposit"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toBottomOf="@id/tvGetAmt50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvGetAmt50"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGetAmt20"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/get_20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp42"
+            android:lineHeight="@dimen/sp16"
+            app:layout_constraintTop_toBottomOf="@id/tvGetAmt50Des"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvGetAmt50Des"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGetAmt20Des"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/when_they_participate_in_a_tournament"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toBottomOf="@id/tvGetAmt20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvGetAmt20"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

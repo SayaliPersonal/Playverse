@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/dp37"
+        android:layout_height="@dimen/dp37"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:src="@drawable/img_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp6"
+        android:fontFamily="@font/exo_bold"
+        android:text="@string/beat_the_high_score"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp28"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEnterNo"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp6"
+        android:fontFamily="@font/oxygen_regular"
+        android:text="@string/get_unlimited_number_of_tries_to_beat_the_high_score_and_stay_on_top_of_the_leaderboard"
+        android:textColor="#99ffffff"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="@+id/tvGetStarted"
+        app:layout_constraintStart_toStartOf="@+id/tvGetStarted"
+        app:layout_constraintTop_toBottomOf="@+id/tvGetStarted" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

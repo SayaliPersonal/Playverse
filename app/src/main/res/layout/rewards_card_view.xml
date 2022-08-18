@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardElevation="@dimen/dimen_0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_rewards_frame">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rewards_constraint_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/dp12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_bucket"
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="@dimen/dp100"
+                    android:src="@drawable/ic_bucket"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_rewards_title"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp27"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/rewards"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    app:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_rewards_des"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp6"
+                    android:fontFamily="@font/oxygen_regular"
+                    android:text="@string/rewards_are_distributed_once_the_tournament_ends_depending_on_your_final_rank"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintStart_toStartOf="@+id/tv_rewards_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_rewards_title"
+                    card_view:layout_constraintEnd_toStartOf="@+id/img_bucket" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRankAmountList"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginEnd="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp29"
+                    app:layout_constraintEnd_toEndOf="@id/img_bucket"
+                    app:layout_constraintStart_toStartOf="@id/txt_rewards_des"
+                    app:layout_constraintTop_toBottomOf="@id/txt_rewards_des"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:id="@+id/downArrow"
+                    android:layout_marginBottom="@dimen/dp12"
+                    app:layout_constraintTop_toBottomOf="@id/rvRankAmountList"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/ic_down_arrow"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

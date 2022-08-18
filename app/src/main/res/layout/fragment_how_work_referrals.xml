@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="networkErrorValue"
+            type="boolean" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/referral_bg"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp40">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp30"
+                android:src="@drawable/iv_back_with_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAddCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/how_referral_works"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgWallet"
+                android:layout_width="@dimen/dp232"
+                android:layout_height="@dimen/dp201"
+                android:layout_marginTop="@dimen/dp51"
+                android:layout_marginEnd="@dimen/dp16"
+                android:src="@drawable/ic_wallet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ivBack"
+                app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBlur"
+                android:layout_width="@dimen/dp232"
+                android:layout_height="@dimen/dp201"
+                android:layout_marginTop="@dimen/dp51"
+                android:layout_marginEnd="@dimen/dp16"
+                android:src="@drawable/blur"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ivBack"
+                app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRefferralText"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp40"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/want_to_earn_some_free_cash_n_easy"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgWallet" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRefferralTextValue"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp28"
+                android:layout_marginTop="@dimen/dp12"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/share_this_link_with_your_friend_and_after_they_install_both_of_you_get_cash_rewards"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRefferralText" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_refferral_map_card"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                app:layout_constraintEnd_toEndOf="@id/tvRefferralTextValue"
+                app:layout_constraintStart_toStartOf="@id/tvRefferralTextValue"
+                app:layout_constraintTop_toBottomOf="@id/tvRefferralTextValue">
+
+                <include layout="@layout/refferral_map" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_share_card"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_marginTop="@dimen/dp45"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint_refferral_map_card">
+
+                <include layout="@layout/share_card" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_options_main">
+
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp32"
+            android:background="@drawable/bg_view_standings"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="@dimen/dp16" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_options"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp16"
+            app:layout_constraintStart_toStartOf="@id/btnCancel"
+            app:layout_constraintEnd_toEndOf="@id/btnCancel"
+            app:layout_constraintBottom_toTopOf="@+id/btnCancel">
+
+            <TextView
+                android:id="@+id/tvTakePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/take_a_photo"
+                android:fontFamily="@font/exo_bold"
+                android:layout_marginBottom="@dimen/dp23"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/sp16"
+                android:textColor="@color/white"/>
+
+            <View
+                android:id="@+id/viewOne"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_marginHorizontal="@dimen/dp18"
+                android:layout_marginBottom="@dimen/dp16"
+                app:layout_constraintBottom_toTopOf="@id/tvTakePhoto"
+                android:background="@color/divider_clr"/>
+
+            <TextView
+                android:id="@+id/tvPhotoGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/upload_from_gallery"
+                android:fontFamily="@font/exo_bold"
+                android:layout_marginBottom="@dimen/dp23"
+                app:layout_constraintEnd_toEndOf="@id/viewOne"
+                app:layout_constraintBottom_toTopOf="@id/viewOne"
+                app:layout_constraintStart_toStartOf="@id/viewOne"
+                android:textSize="@dimen/sp16"
+                android:textColor="@color/white"/>
+
+            <View
+                android:id="@+id/viewTwo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_marginHorizontal="@dimen/dp18"
+                android:layout_marginBottom="@dimen/dp16"
+                app:layout_constraintBottom_toTopOf="@id/tvPhotoGallery"
+                android:background="@color/divider_clr"/>
+
+            <TextView
+                android:id="@+id/tvChooseAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_an_avatar"
+                android:fontFamily="@font/exo_bold"
+                android:paddingTop="@dimen/dp18"
+                android:layout_marginBottom="@dimen/dp23"
+                app:layout_constraintEnd_toEndOf="@id/viewTwo"
+                app:layout_constraintBottom_toTopOf="@id/viewTwo"
+                app:layout_constraintStart_toStartOf="@id/viewTwo"
+                android:textSize="@dimen/sp16"
+                android:textColor="@color/white"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

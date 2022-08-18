@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="networkErrorValue"
+            type="boolean" />
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_create_profile">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp62"
+            android:src="@drawable/iv_back_with_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAddCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/add_cash"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200dp"
+            android:layout_marginTop="@dimen/dp56"
+            app:cardCornerRadius="@dimen/dp10"
+            android:elevation="@dimen/dp8"
+            android:alpha=".3"
+            visible="@{!networkErrorValue}"
+            android:layout_marginHorizontal="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddCash" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".2"
+                android:background="@drawable/bg_white_blur_new"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/amount"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp14"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginStart="@dimen/dp18"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toTopOf="@+id/card" />
+
+        <EditText
+            android:id="@+id/etEnterAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:hint="@string/enter_amount"
+            android:layout_marginTop="@dimen/dp16"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:background="@drawable/border_white"
+            android:textColorHint="@color/white_opacity20"
+            android:textSize="@dimen/sp18"
+            android:lines="1"
+            android:textCursorDrawable="@color/transparent"
+            android:textColor="@color/transparent"
+            android:drawableStart="@drawable/ic_rupee"
+            android:drawablePadding="@dimen/dp16"
+            android:paddingStart="@dimen/dp18"
+            android:paddingVertical="@dimen/dp12"
+            android:layout_marginHorizontal="@dimen/dp18"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
+        <TextView
+            android:id="@+id/tvErrorMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/enter_amount"
+            android:textColor="@color/error"
+            android:textSize="@dimen/sp12"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintStart_toStartOf="@+id/etEnterAmount"
+            app:layout_constraintTop_toBottomOf="@+id/etEnterAmount" />
+        <TextView
+            android:id="@+id/tvAlternative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:fontFamily="@font/oxygen_regular"
+            android:textSize="@dimen/sp18"
+            android:layout_marginStart="@dimen/dp50"
+            app:layout_constraintBottom_toBottomOf="@+id/etEnterAmount"
+            app:layout_constraintStart_toStartOf="@+id/etEnterAmount"
+            app:layout_constraintTop_toTopOf="@+id/etEnterAmount" />
+
+        <Button
+            android:id="@+id/btnProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_login_activate"
+            android:text="@string/proceed"
+            visible="@{!networkErrorValue}"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:fontFamily="@font/exo_bold"
+            android:layout_marginTop="@dimen/dp40"
+            app:layout_constraintEnd_toEndOf="@+id/etEnterAmount"
+            app:layout_constraintStart_toStartOf="@+id/etEnterAmount"
+            app:layout_constraintTop_toBottomOf="@+id/etEnterAmount" />
+
+        <include
+            android:id="@+id/networkError"
+            layout="@layout/network_error"
+            visible="@{networkErrorValue}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="selected"
+            type="boolean" />
+    </data>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_leaderboard">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp62"
+                android:src="@drawable/iv_back_with_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSelectAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/select_avatar"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+
+
+            <ImageView
+                android:id="@+id/bgAvatarOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp62"
+                android:visibility="invisible"
+                android:src="@drawable/bg_selected_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectAvatar" />
+
+            <ImageView
+                android:id="@+id/ivAvatarOne"
+                android:layout_width="@dimen/dp160"
+                android:layout_height="@dimen/dp160"
+                android:src="@drawable/avatar_one"
+                android:layout_marginTop="@dimen/dp8"
+                app:layout_constraintBottom_toBottomOf="@+id/bgAvatarOne"
+                app:layout_constraintEnd_toEndOf="@+id/bgAvatarOne"
+                app:layout_constraintStart_toStartOf="@+id/bgAvatarOne"
+                app:layout_constraintTop_toTopOf="@+id/bgAvatarOne" />
+
+            <ImageView
+                android:id="@+id/bgAvatarTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp62"
+                android:visibility="invisible"
+                android:src="@drawable/bg_selected_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectAvatar" />
+
+
+            <ImageView
+                android:id="@+id/ivAvatarTwo"
+                android:layout_width="@dimen/dp163"
+                android:layout_height="@dimen/dp163"
+                android:layout_marginEnd="@dimen/dp8"
+                android:src="@drawable/avatar_two"
+                android:paddingStart="@dimen/dp8"
+                app:layout_constraintBottom_toBottomOf="@+id/bgAvatarTwo"
+                app:layout_constraintEnd_toEndOf="@+id/bgAvatarTwo"
+                app:layout_constraintStart_toStartOf="@+id/bgAvatarTwo"
+                app:layout_constraintTop_toTopOf="@+id/bgAvatarTwo" />
+
+            <ImageView
+                android:id="@+id/bgAvatarThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:src="@drawable/bg_selected_avatar"
+                app:layout_constraintStart_toStartOf="@id/bgAvatarOne"
+                app:layout_constraintTop_toBottomOf="@+id/bgAvatarOne" />
+
+            <ImageView
+                android:id="@+id/ivAvatarThree"
+                android:layout_width="@dimen/dp160"
+                android:layout_height="@dimen/dp160"
+                android:src="@drawable/avatar_three"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="@dimen/dp16"
+                app:layout_constraintBottom_toBottomOf="@+id/bgAvatarThree"
+                app:layout_constraintEnd_toEndOf="@+id/bgAvatarThree"
+                app:layout_constraintStart_toStartOf="@+id/bgAvatarThree"
+                app:layout_constraintTop_toTopOf="@+id/bgAvatarThree" />
+
+            <ImageView
+                android:id="@+id/bgAvatarFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:src="@drawable/bg_selected_avatar"
+                app:layout_constraintStart_toStartOf="@id/bgAvatarTwo"
+                app:layout_constraintTop_toBottomOf="@+id/bgAvatarTwo" />
+
+            <ImageView
+                android:id="@+id/ivAvatarFour"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp150"
+                android:src="@drawable/avatar_four"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="@dimen/dp16"
+                app:layout_constraintBottom_toBottomOf="@+id/bgAvatarFour"
+                app:layout_constraintEnd_toEndOf="@+id/bgAvatarFour"
+                app:layout_constraintStart_toStartOf="@+id/bgAvatarFour"
+                app:layout_constraintTop_toTopOf="@+id/bgAvatarFour" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="590dp" />
+
+
+            <Button
+                android:id="@+id/btnConfirmAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp32"
+                android:background="@{selected ? @drawable/btn_login_activate : @drawable/bg_btn_login}"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/confirm_avatar"
+                android:textAllCaps="false"
+                android:enabled="@{selected ? true : false}"
+                android:textColor="@{selected ? @color/white : @color/off_white}"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

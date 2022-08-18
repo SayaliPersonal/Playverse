@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/dp16">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/myCardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0dp"
+            android:layout_marginTop="@dimen/dp15"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardBackgroundColor="@color/black"
+            card_view:cardCornerRadius="@dimen/dp10"
+            card_view:cardElevation="@dimen/dimen_0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/constraint_card"
+                android:paddingBottom="@dimen/dp50"
+                android:background="@drawable/card_view_bg">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_time_recentt"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/timer_bg"
+                    android:drawableStart="@drawable/ic_gold_watch"
+                    android:drawablePadding="@dimen/dp15"
+                    android:paddingBottom="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:fontFamily="@font/exo_bold"
+                    android:paddingEnd="@dimen/dp10"
+                    android:paddingStart="@dimen/dp10"
+                    android:text="@string/_1d_33h_25m"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="@color/golden"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_astronut"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp34"
+                    android:src="@drawable/ic_astronaut"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_recent_continue"
+                    android:layout_width="@dimen/dimen_200dp"
+                    android:layout_height="@dimen/dp49"
+                    android:layout_marginStart="@dimen/dp28"
+                    android:background="@drawable/ic_orange_button_large"
+                    android:text="@string/continue_playing"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/exo_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@id/img_game_statss"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/img_game_statss"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_game_statss"
+                    android:layout_width="@dimen/dp72"
+                    android:layout_height="@dimen/dp51"
+                    android:padding="@dimen/dimen_10dp"
+                    android:background="@drawable/ic_tournaments_stats"
+                    android:layout_marginStart="@dimen/dp20"
+                    android:layout_marginTop="@dimen/dp22"
+                    app:layout_constraintTop_toBottomOf="@id/your_hieghst_score_titlee"
+                    app:layout_constraintEnd_toEndOf="@id/your_hieghst_score_titlee"
+                    app:layout_constraintStart_toStartOf="@id/your_hieghst_score_titlee"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_standings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_view_standings"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/view_standings"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="@dimen/dp40"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/your_hieghst_score_titlee" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inner_card"
+                    android:layout_marginTop="@dimen/dp11"
+                    android:layout_marginEnd="@dimen/dp20"
+                    app:cardCornerRadius="@dimen/dp15"
+                    app:layout_constraintTop_toBottomOf="@id/txt_time_recentt"
+                    app:layout_constraintStart_toStartOf="@id/txt_time_recentt">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/dp10">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:id="@+id/your_score_title"
+                            android:textSize="@dimen/sp14"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/your_score" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp40"
+                            android:textColor="@color/white"
+                            android:id="@+id/your_score"
+                            android:fontFamily="@font/exo_extrabold"
+                            app:layout_constraintTop_toBottomOf="@id/your_score_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/_23" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dp110"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp12"
+                            android:layout_marginTop="@dimen/dp8"
+                            android:textColor="@color/white"
+                            android:id="@+id/your_score_detaill"
+                            app:layout_constraintTop_toBottomOf="@id/your_score"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/just_117_points_more_to_win_u00e2_u0082_u00b950" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:id="@+id/your_rank_title"
+                            android:textSize="@dimen/sp14"
+                            android:layout_marginTop="@dimen/dp12"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toBottomOf="@id/your_score_detaill"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/your_rank" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp14"
+                            android:textColor="@color/white"
+                            android:id="@+id/your_rankk"
+                            android:layout_marginTop="@dimen/dp2"
+                            android:fontFamily="@font/exo_extrabold"
+                            app:layout_constraintTop_toBottomOf="@id/your_rank_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/_14" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="@color/white"
+                    android:id="@+id/your_hieghst_scoree"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/exo_extrabold"
+                    app:layout_constraintTop_toBottomOf="@id/inner_card"
+                    app:layout_constraintEnd_toEndOf="@id/inner_card"
+                    app:layout_constraintStart_toStartOf="@id/inner_card"
+                    android:text="@string/_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/your_hieghst_score_titlee"
+                    android:textSize="@dimen/sp14"
+                    android:layout_marginTop="@dimen/dp2"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/your_hieghst_scoree"
+                    app:layout_constraintEnd_toEndOf="@id/your_hieghst_scoree"
+                    app:layout_constraintStart_toStartOf="@id/your_hieghst_scoree"
+                    android:text="@string/current_high_score" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_recent_tournament"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:padding="@dimen/dp10"
+            android:fontFamily="@font/exo_bold"
+            android:background="@drawable/button_border"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/low_stake_tournament"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

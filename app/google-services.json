@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930869986205",
+    "project_id": "rumble-app-dev",
+    "storage_bucket": "rumble-app-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930869986205:android:f96152d2a1705ddc636574",
+        "android_client_info": {
+          "package_name": "com.robosoft.playverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930869986205-hu2j6rjg27756ktfj97qtp8qbue2gunr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYBgJ4wHemgGTKpIZ5pVP88UVhB0HPJJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930869986205-hu2j6rjg27756ktfj97qtp8qbue2gunr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

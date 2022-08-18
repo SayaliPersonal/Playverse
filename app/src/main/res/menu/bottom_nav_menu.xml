@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/gameDetailFragment"
+        android:title="@null"
+        android:icon="@drawable/bottom_game"/>
+
+    <item
+        android:id="@+id/searchFragment"
+        android:title="@null"
+        android:icon="@drawable/bottom_search"/>
+   <!-- <item
+        android:id="@+id/search"
+        android:title=""
+        android:icon="@drawable/ic_search"/>
+    <item
+        android:id="@+id/award"
+        android:title=""
+        android:icon="@drawable/ic_awards"/>-->
+    <item
+        android:id="@+id/myFundsFragment"
+        android:title="@null"
+        android:icon="@drawable/bottom_funds"/>
+    <item
+        android:id="@+id/profileDetailsFragment"
+        android:title="@null"
+        android:icon="@drawable/ic_baseline_sentiment_very_satisfied_24"/>
+</menu>

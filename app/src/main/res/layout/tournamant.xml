@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0dp"
+        android:layout_marginTop="@dimen/dp36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/myCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardBackgroundColor="#20FFFFFF"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="@dimen/dimen_0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp23"
+                android:id="@+id/constraint_card_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dp70"
+                    android:layout_height="@dimen/dp70"
+                    android:src="@drawable/ic_coin"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp40"
+                    android:id="@+id/img_prize_amt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_win"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/win_upto"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/sp12"
+                    android:lineHeight="@dimen/sp14"
+                    android:layout_marginTop="@dimen/dp40"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/exo_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/txt_win"
+                    app:layout_constraintStart_toEndOf="@id/img_prize_amt"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWinAmt"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:lineHeight="@dimen/sp43"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/exo_bold"
+                    android:textSize="@dimen/sp36"
+                    app:layout_constraintTop_toBottomOf="@id/txt_win"
+                    app:layout_constraintStart_toStartOf="@id/txt_win"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/dp18"
+                    android:textSize="@dimen/sp16"
+                    android:lineHeight="@dimen/sp19"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/guaranteed_rewards_up_to_rank"
+                    app:layout_constraintStart_toStartOf="@id/img_prize_amt"
+                    app:layout_constraintTop_toBottomOf="@id/img_prize_amt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/off_white"
+                    android:id="@+id/view"
+                    android:alpha="0.1"
+                    android:layout_marginVertical="@dimen/dp20"
+                    android:layout_marginHorizontal="@dimen/dp20"
+                    app:layout_constraintTop_toBottomOf="@id/txt_rank"
+                    app:layout_constraintStart_toStartOf="@id/txt_rank"
+                    app:layout_constraintEnd_toEndOf="@id/txt_rank" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="23dp"
+                    android:id="@+id/constraint_tournamant_playerInfo"
+                    app:layout_constraintTop_toBottomOf="@id/view">
+
+                    <include
+                        layout="@layout/tournamant_game_info"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_tournament"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:padding="@dimen/dp10"
+            android:textSize="@dimen/sp14"
+            android:textColor="@color/white"
+            android:fontFamily="@font/exo_bold"
+            android:background="@drawable/golden_border"
+            android:gravity="center"
+            android:text="@string/low_stake_tournament"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp120"
+        android:src="@drawable/ic_cup_golden"
+        android:id="@+id/img_prize"
+        android:layout_marginEnd="@dimen/dp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_time"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:paddingVertical="@dimen/dp5_19"
+        android:paddingHorizontal="@dimen/dp8"
+        android:drawableLeft="@drawable/ic_gold_watch"
+        android:textColor="@color/golden"
+        android:drawablePadding="@dimen/dp7"
+        android:textSize="@dimen/sp14"
+        android:lineHeight="@dimen/sp17"
+        android:fontFamily="@font/exo_bold"
+        android:background="@drawable/timer_bg"
+        android:text="1d : 33h : 25m"
+        app:layout_constraintTop_toBottomOf="@id/img_prize"
+        app:layout_constraintBottom_toBottomOf="@id/img_prize"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

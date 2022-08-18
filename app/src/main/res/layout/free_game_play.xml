@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp125"
+        android:layout_marginTop="@dimen/dp16"
+        card_view:cardBackgroundColor="#20FFFFFF"
+        card_view:cardCornerRadius="@dimen/dp10"
+        card_view:cardElevation="@dimen/dimen_0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_card_des"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_bold"
+            android:text=""
+            android:maxLines="2"
+            android:layout_marginStart="@dimen/dp24"
+            android:textAllCaps="false"
+            android:lineSpacingExtra="-1sp"
+            android:textColor="@color/white"
+            android:lineHeight="@dimen/sp19"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/gameFreePlay"
+            app:layout_constraintEnd_toStartOf="@id/imgCoin"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gameFreePlay"
+            android:layout_width="@dimen/dp119"
+            android:layout_height="@dimen/dp33"
+            android:background="@drawable/ic_button_freeplay"
+            android:fontFamily="@font/exo_bold"
+            android:layout_marginTop="@dimen/dp16"
+            android:lineHeight="@dimen/sp14"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toBottomOf="@id/txt_card_des"
+            app:layout_constraintStart_toStartOf="@id/txt_card_des"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dimen_118dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imgCoin"
+            android:src="@drawable/ic_multi_coins"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_card_des"
+            app:layout_constraintBottom_toBottomOf="@id/gameFreePlay"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

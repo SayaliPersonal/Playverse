@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recent_games"
+        app:textAllCaps="false"
+        android:textAllCaps="false"
+        android:fontFamily="@font/exo_bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0dp"
+        android:layout_marginTop="@dimen/dp36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_card"
+        app:layout_constraintTop_toTopOf="@id/txt_card">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/myCardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0dp"
+            android:layout_marginTop="@dimen/dp15"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardBackgroundColor="@color/black"
+            card_view:cardCornerRadius="@dimen/dp10"
+            card_view:cardElevation="@dimen/dimen_0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/constraint_card"
+                android:paddingBottom="@dimen/dp23"
+                android:background="@drawable/card_view_bg">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_time"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/timer_bg"
+                    android:drawableStart="@drawable/ic_gold_watch"
+                    android:drawablePadding="@dimen/dp15"
+                    android:visibility="invisible"
+                    android:paddingBottom="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingEnd="@dimen/dp10"
+                    android:paddingStart="@dimen/dp10"
+                    android:text="@string/_1d_33h_25m"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="@color/golden"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_astronut"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp34"
+                    android:src="@drawable/ic_free_avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp49"
+                    android:layout_marginStart="@dimen/dp28"
+                    android:layout_marginEnd="@dimen/dp28"
+                    android:background="@drawable/ic_orange_button_large"
+                    android:text="@string/continue_playing"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/exo_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14"
+                    android:layout_marginTop="@dimen/dp30"
+                    app:layout_constraintTop_toBottomOf="@id/img_astronut"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inner_card"
+                    android:layout_marginTop="@dimen/dp11"
+                    android:layout_marginEnd="@dimen/dp20"
+                    app:cardCornerRadius="@dimen/dp15"
+                    app:layout_constraintTop_toBottomOf="@id/txt_time"
+                    app:layout_constraintStart_toStartOf="@id/txt_time">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/dp10"
+                        android:background="#377FFF">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:id="@+id/your_score_title"
+                            android:textSize="@dimen/sp14"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/your_score" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp40"
+                            android:textColor="@color/white"
+                            android:id="@+id/your_scoce"
+                            android:fontFamily="@font/exo_extrabold"
+                            app:layout_constraintTop_toBottomOf="@id/your_score_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/_23" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dp110"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp12"
+
+                            android:layout_marginTop="@dimen/dp8"
+                            android:textColor="@color/white"
+                            android:id="@+id/your_score_detail"
+                            app:layout_constraintTop_toBottomOf="@id/your_scoce"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/just_117_points_more_to_win_u00e2_u0082_u00b950" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:id="@+id/your_rank_title"
+                            android:textSize="@dimen/sp14"
+                            android:layout_marginTop="@dimen/dp12"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toBottomOf="@id/your_score_detail"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/your_score" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_tournament"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:padding="@dimen/dp10"
+            android:background="@drawable/green_gradient"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/free_game_play"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

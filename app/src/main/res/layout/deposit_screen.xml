@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="#30FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardCornerRadius="@dimen/dp10"
+        card_view:cardElevation="@dimen/dimen_0dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_cash_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp66"
+                android:fontFamily="@font/exo_regular"
+                android:text="@string/cash_added_successfully"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txt_deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:fontFamily="@font/exo_bold"
+                android:lineHeight="@dimen/sp17"
+                android:lineSpacingExtra="@dimen/sp2"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp36"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_cash_add" />
+
+           <!-- <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp11"
+                android:fontFamily="@font/exo_regular"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_deposit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_cashback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp11"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/you_got"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintStart_toStartOf="@id/txt_cash_add"
+                app:layout_constraintTop_toBottomOf="@id/txt_plus" />
+-->
+           <!-- <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_cashback_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp4"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/_50_cashback"
+                android:textColor="@color/golden"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="@id/txt_cashback"
+                app:layout_constraintStart_toEndOf="@id/txt_cashback"
+                app:layout_constraintTop_toTopOf="@id/txt_cashback" />-->
+
+            <View
+                android:id="@+id/view_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_marginHorizontal="@dimen/dp23"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp18"
+                android:alpha="0.5"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_deposit" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_cash_added"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp24"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/cash_added"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintStart_toStartOf="@id/view_one"
+                app:layout_constraintTop_toBottomOf="@id/view_one" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_processing_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/wallet_balance"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintStart_toStartOf="@id/txt_cash_added"
+                app:layout_constraintTop_toBottomOf="@id/txt_cash_added" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_tds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/payment_time"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintStart_toStartOf="@id/txt_processing_fee"
+                app:layout_constraintTop_toBottomOf="@id/txt_processing_fee" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_recieve_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp32"
+                android:fontFamily="@font/oxygen_regular"
+                android:text="@string/transaction_id"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/txt_tds"
+                app:layout_constraintTop_toBottomOf="@id/txt_tds"
+                app:layout_constraintVertical_bias="0.085" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_transactionId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="@dimen/dp32"
+                android:fontFamily="@font/exo_bold"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/txt_recieve_amt"
+                app:layout_constraintTop_toBottomOf="@id/txt_recieve_amt" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_amt_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/_1000"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="@id/txt_cash_added"
+                app:layout_constraintEnd_toEndOf="@id/view_one"
+                app:layout_constraintTop_toTopOf="@id/txt_cash_added" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_wallet_bal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/_1000"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="@id/txt_processing_fee"
+                app:layout_constraintEnd_toEndOf="@id/txt_amt_val"
+                app:layout_constraintTop_toBottomOf="@id/txt_amt_val"
+                app:layout_constraintTop_toTopOf="@id/txt_processing_fee" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_tds_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_bold"
+                android:text="@string/_09_00_02_20_2021"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="@id/txt_tds"
+                app:layout_constraintEnd_toEndOf="@id/txt_wallet_bal"
+                app:layout_constraintTop_toBottomOf="@id/txt_wallet_bal"
+                app:layout_constraintTop_toTopOf="@id/txt_tds" />
+
+
+            <!--  <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_transactionId"
+                android:layout_width="0dp"
+                android:layout_height="14dp"
+                android:fontFamily="@font/exo_bold"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="@id/txt_recieve_amt"
+                app:layout_constraintEnd_toEndOf="@id/txt_tds_val"
+                app:layout_constraintTop_toBottomOf="@id/txt_tds_val"
+                app:layout_constraintTop_toTopOf="@id/txt_recieve_amt" />
+-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

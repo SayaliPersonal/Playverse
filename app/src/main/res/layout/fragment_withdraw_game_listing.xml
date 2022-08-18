@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/deposit_comp_bg"
+        tools:context=".feature.presentation.view.funds.DepositGameListing">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvGameDetails"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0dp"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_curve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_deposit_bg">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_multi_koin"
+                    app:layout_constraintBottom_toBottomOf="@id/img_curve"
+                    app:layout_constraintEnd_toEndOf="@id/img_curve"
+                    app:layout_constraintStart_toStartOf="@id/img_curve"
+                    app:layout_constraintTop_toTopOf="@id/img_curve"
+                    android:layout_marginTop="170dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="@dimen/dp37"
+                    android:layout_height="@dimen/dp37"
+                    android:layout_marginEnd="@dimen/dp18"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/img_close"
+                    android:padding="@dimen/dimen_10dp"
+                    app:layout_constraintEnd_toEndOf="@id/img_curve"
+                    app:layout_constraintTop_toTopOf="@id/img_curve" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_summery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/exo_bold"
+                    android:text="@string/transaction_detail"
+                    android:layout_marginLeft="@dimen/dp17"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp20"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/Withdraw_constraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:layout_marginHorizontal="@dimen/dp17"
+                    android:layout_marginTop="@dimen/dp50"
+                    android:background="@color/color_transparent"
+                    app:layout_constraintEnd_toEndOf="@id/img_coin"
+                    app:layout_constraintStart_toStartOf="@id/img_coin"
+                    app:layout_constraintTop_toBottomOf="@id/img_coin"
+                    app:layout_constraintTop_toTopOf="@id/img_coin">
+
+                    <include
+                        android:id="@+id/withdraw"
+                        layout="@layout/withdraw_screen" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tournament_constraint"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp17"
+                    android:layout_marginTop="@dimen/dp26"
+                    android:layout_marginBottom="@dimen/dp24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Withdraw_constraint">
+
+                    <include layout="@layout/withdraw_help_section" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/txn_history_constraint"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp17"
+                    android:layout_marginTop="@dimen/dp26"
+                    android:layout_marginBottom="@dimen/dp32"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tournament_constraint">
+
+                    <include layout="@layout/transaction_history_card" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/list"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp17"
+                    android:layout_marginTop="@dimen/dp26"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txn_history_constraint">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/game_list_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/exo_bold"
+                        android:text="@string/win_big_with_these_games"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp22"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_0dp"
+                        android:id="@+id/rvGameListData"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/game_list_title"
+                        tools:listitem="@layout/list_card_view" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

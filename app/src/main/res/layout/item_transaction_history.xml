@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout">
+
+
+        <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/white"
+            android:layout_margin="@dimen/dp16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="June 2022"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginHorizontal="@dimen/dp16"
+            app:layout_constraintStart_toEndOf="@id/tvMonth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvMonth"
+            app:layout_constraintTop_toTopOf="@id/tvMonth"
+            android:background="@color/neutral"/>
+
+        <ImageView
+            android:id="@+id/ivAddCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_cash"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMonth"
+            android:layout_marginStart="@dimen/dp18"
+            android:layout_marginTop="@dimen/dp30"/>
+
+        <ImageView
+            android:id="@+id/ivWithdrawCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_withdrawn"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dp18"
+            android:layout_marginTop="@dimen/dp30"/>
+
+        <TextView
+            android:id="@+id/tvCashAdded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/cash_added"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp22"
+            android:layout_marginStart="@dimen/dp18"
+            app:layout_constraintStart_toEndOf="@+id/ivAddCash"
+            app:layout_constraintTop_toBottomOf="@id/tvMonth" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="07 Jun, 2021 ; 6:05 PM"
+            android:layout_marginTop="@dimen/dp6"
+            android:textColor="@color/white_opacity60"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintStart_toStartOf="@+id/tvCashAdded"
+            app:layout_constraintTop_toBottomOf="@+id/tvCashAdded" />
+
+        <TextView
+            android:id="@+id/tvAddCashMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="+₹5"
+            android:layout_marginEnd="@dimen/dp14"
+
+            android:textColor="@color/success" android:textSize="@dimen/sp18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCashAdded" />
+
+        <ImageView
+            android:id="@+id/ivUpArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_up_arrow"
+            android:visibility="gone"
+            android:paddingVertical="@dimen/dp16"
+            android:paddingHorizontal="@dimen/dp14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddCashMoney" />
+
+        <ImageView
+            android:id="@+id/ivDownArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_down_arrow"
+            android:paddingVertical="@dimen/dp16"
+            android:paddingHorizontal="@dimen/dp14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddCashMoney" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp30"
+        android:minHeight="@dimen/dimen_200dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="@dimen/dp16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDate">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200dp"
+            android:alpha=".2"
+            android:background="@drawable/bg_white_blur_purple_border"
+            android:src="@drawable/bg_white_blur_purple_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_marginTop="@dimen/dp16"
+            app:cardCornerRadius="@dimen/dp8"
+            android:elevation="@dimen/dp8"
+            android:alpha=".3"
+            android:layout_marginHorizontal="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutDetails" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".2"
+                android:background="@drawable/bg_white_blur_new"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/deposit"
+            android:textColor="@color/white_opacity80"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toTopOf="@+id/card" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="+₹5"
+            android:textColor="@color/success"
+            android:textSize="@dimen/sp18"
+            app:layout_constraintEnd_toEndOf="@+id/textView10"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/winnings"
+            android:textColor="@color/white_opacity80"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/card" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_vertical_line"
+            app:layout_constraintBottom_toBottomOf="@+id/card"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toTopOf="@+id/card" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp14"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/game"
+            android:textColor="@color/neutral"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toBottomOf="@+id/card" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="Aeronaut Free Run"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp14"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/trans_status"
+            android:textColor="@color/neutral"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/successful"
+            android:textColor="@color/success"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            android:fontFamily="@font/oxygen_regular"
+            android:text="@string/trans_id"
+            android:textColor="@color/neutral"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp2"
+            android:fontFamily="@font/exo_regular"
+            android:text="328Y589346583468"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <Button
+            android:layout_width="@dimen/dp114"
+            android:layout_height="@dimen/dp34"
+            android:background="@drawable/btn_login_activate"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/need_help"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintBottom_toBottomOf="@+id/textView17"
+            app:layout_constraintEnd_toEndOf="@+id/textView16"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginBottom="@dimen/dp16"
+            android:background="@color/neutral"
+            app:layout_constraintEnd_toEndOf="@id/tvAddCashMoney"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivAddCash"
+            app:layout_constraintTop_toBottomOf="@id/layoutDetails" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/errorpage">
+
+        <TextView
+            android:id="@+id/tvnoInternet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="320dp"
+            android:fontFamily="@font/exo_bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/no_internet"
+            android:textSize="@dimen/sp22"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvplease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp12"
+            android:fontFamily="@font/exo_regular"
+            android:text="@string/please_connect"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoInternet"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="416dp"
+            tools:ignore="MissingConstraints">
+        </TextView>
+
+        <Button
+            android:id="@+id/btTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_try_again"
+            android:gravity="center"
+            android:fontFamily="@font/exo_bold"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvplease"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="97dp">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
