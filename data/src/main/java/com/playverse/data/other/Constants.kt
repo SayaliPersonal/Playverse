@@ -17,6 +17,7 @@ object Constants {
         const val VERIFY_OTP = "user/mobile/verify"
         const val SETUP_AVATAR_USERNAME = "user/mobile/userDetails"
         const val FETCH_USER_DETAILS = "user/mobile/user"
+        const val VERSION_DETAIL = "transaction/app/update"
     }
 
     object ProfileTournaments {

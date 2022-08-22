@@ -2,7 +2,9 @@ package com.robosoft.playverse
 
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface.OnShowListener
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -14,7 +16,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
@@ -25,16 +29,16 @@ import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateManager
+import com.playverse.data.models.VersionUpdate
 import com.playverse.data.util.Constants
 import com.robosoft.playverse.base.AppStorage
 import com.robosoft.playverse.databinding.ActivityMainBinding
 import com.robosoft.playverse.feature.presentation.view.profile.ServerDateTime
+import com.robosoft.playverse.feature.presentation.viewModel.VesrionViewModel
 import com.robosoft.playverse.utilities.TemporaryStorage
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.DataOutputStream
 import java.io.File
 import java.io.FileOutputStream
-import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 import javax.inject.Inject
@@ -59,12 +63,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var downloadController: DownloadController
     @Inject
     lateinit var appStorage: AppStorage
-    var strApkFileUrl="https://dev-ruskolympus.s3.ap-south-1.amazonaws.com/playverse-apk/playverse.apk"
-//    init {
-//        System.loadLibrary("native-lib")
-//    }
-//
-//    external fun detectfrida()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,14 +71,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setUpNavigation()
         setUpBottomNavigation()
-        // hideSystemBars()
-
-        // This apk is taking pagination sample app
-        downloadController = DownloadController(this, strApkFileUrl)
-
-        initRootDetection()
         bottomNavProfileUpdation()
-        //downloadAppDialog()
         downloadInstall()
         val time = ServerDateTime(this)
         time.fetch(object : ServerDateTime.CallBack {
@@ -89,69 +81,89 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun initRootDetection() {
-//
-//        try {
-//            detectfrida()
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//
-//        val rootBeer = RootBeer(this)
-//        GlobalScope.launch(Dispatchers.IO) {
-//            if (rootBeer.isRooted) {
-//                val builder = MaterialAlertDialogBuilder(this@MainActivity)
-//                    .setTitle(resources.getString(R.string.label_root_detect_title))
-//                    .setMessage(resources.getString(R.string.label_root_detect_message))
-//                    .setCancelable(false)
-//                    .setNegativeButton(resources.getString(R.string.label_root_detect_dismiss)) { dialog, _ ->
-//                        dialog.dismiss()
-//                    }
-//
-//                withContext(Dispatchers.Main) {
-//                    val dialog = builder.create()
-//                    dialog.show()
-//                }
-//            }
-//        }
-//
-        val p: Process
-        try {
-            // Preform su to get root privledges
-            p = Runtime.getRuntime().exec("su")
-
-            // Attempt to write a file to a root-only
-            val os = DataOutputStream(p.getOutputStream())
-            os.writeBytes("echo \"Do I have root?\" >/system/sd/temporary.txt\n")
-
-            // Close the terminal
-            os.writeBytes("exit\n")
-            os.flush()
-            try {
-                p.waitFor()
-                if (p.exitValue() !== 255) {
-                    Toast.makeText(this, "root", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "not root", Toast.LENGTH_SHORT).show()
-
-                }
-            } catch (e: InterruptedException) {
-                Toast.makeText(this, "not root", Toast.LENGTH_SHORT).show()
-
-            }
-        } catch (e: IOException) {
-            Toast.makeText(this, "not root", Toast.LENGTH_SHORT).show()
-        }
-    }
-
 
     private fun downloadInstall() {
         checkStoragePermission()
+
+
+    }
+
+    private fun callVesrionDetails() {
+        try {
+            val model: VesrionViewModel =
+                ViewModelProvider(this).get(VesrionViewModel::class.java)
+            model.getVersionDetails().observe(this, { it1 ->
+                Log.d("***callVesrionDetails", it1!!.body().toString())
+
+                if (it1.isSuccessful) {
+                    val vesrionUpdate: VersionUpdate = it1.body()!!
+                    Log.d("***VERSION_CODE",  BuildConfig.VERSION_CODE.toString())
+                    Log.d("***VERSION_NAME",  BuildConfig.VERSION_NAME.toString())
+                    val input_version: List<String> = BuildConfig.VERSION_NAME.toString().split(".")
+                    val output_version: List<String> = vesrionUpdate.data.androidAppVersion.split(".")
+                    Log.d("***input_version",  input_version[2])
+                    Log.d("***outPut_version",  output_version[2])
+                    Log.d("***Apk",  vesrionUpdate.data.androidAppLink)
+                    downloadController = DownloadController(this,
+                        vesrionUpdate.data.androidAppLink,binding.progressBar)
+
+                    if (Integer.parseInt(input_version[0])<Integer.parseInt(output_version[0]))
+                    {
+
+                        updateApp(true)
+                    }else if(Integer.parseInt(input_version[1])<Integer.parseInt(output_version[1]))
+                    {
+                        updateApp(false)
+                    }
+
+                } else {
+
+                }
+
+            })
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun updateApp(forceUpdate: Boolean) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Update the app!")
+        builder.setMessage("You are using an older version app, please update to the latest version for the seamless experience!")
+
+        builder.setPositiveButton(
+            "Update"
+        ) { dialogInterface, i -> // Open play store
+            downloadController.enqueueDownload()
+
+            // Dismiss alert dialog
+            dialogInterface.dismiss()
+        }
+        builder.setNegativeButton(
+            "Cancel"
+        ) { dialogInterface, i -> // cancel alert dialog
+            dialogInterface.cancel()
+        }
+        val dialog = builder.create()
+        dialog.setOnShowListener(OnShowListener { dialog ->
+           if (forceUpdate) {
+               builder.setCancelable(false)
+               (dialog as AlertDialog).getButton(AlertDialog.BUTTON_NEGATIVE).isVisible = false
+           }else
+           {
+               builder.setCancelable(false)
+               (dialog as AlertDialog).getButton(AlertDialog.BUTTON_NEGATIVE).isVisible = true
+           }
+        })
+        dialog.show()
     }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         super.onActivityResult(requestCode, resultCode, intent)
+        Toast.makeText(this, "H", Toast.LENGTH_SHORT).show()
+
         if (requestCode == REQUEST_INSTALL) {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Install succeeded!", Toast.LENGTH_SHORT).show()
@@ -171,10 +183,8 @@ class MainActivity : AppCompatActivity() {
             PackageManager.PERMISSION_GRANTED
         ) {
             // start downloading
-
-
-            downloadController.enqueueDownload()
-//            update(strApkFileUrl)
+            callVesrionDetails()
+//            downloadController.enqueueDownload()
 
 
         } else {
@@ -192,7 +202,8 @@ class MainActivity : AppCompatActivity() {
             // Request for camera permission.
             if (grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // start downloading
-                downloadController.enqueueDownload()
+                callVesrionDetails()
+//                downloadController.enqueueDownload()
             } else {
                 // Permission request was denied.
                 binding.mainLayout.showSnackbar(R.string.storage_permission_denied, Snackbar.LENGTH_SHORT)

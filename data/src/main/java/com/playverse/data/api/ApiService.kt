@@ -1,6 +1,7 @@
 package com.playverse.data.api
 
 import com.playverse.data.models.*
+import com.playverse.data.other.Constants
 import retrofit2.Response
 import retrofit2.http.*
 import retrofit2.http.GET
@@ -16,6 +17,9 @@ interface ApiService {
     @Headers("Client-Type: APP")
     @GET("admin/game/{gameid}")
     suspend fun getBannerInfo(@Path("gameid") gameid: String): Response<GameBannerAndInfoResponse>
+
+    @GET(Constants.Login.VERSION_DETAIL)
+    suspend fun versionDetails() : Response<VersionUpdate>
 
 
     @Headers("Client-Type: APP")

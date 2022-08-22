@@ -50,10 +50,13 @@ interface UserBaseService {
         @Query("userId") userId: Int,
     ) : Response<AvatarResponse.MainResponse>
 
-    @GET(Constants.Login.FETCH_USER_DETAILS)
+    @GET(Constants.Login.VERSION_DETAIL)
     suspend fun fetchUserDetails(
         @Query("userId") userId: Int,
         ) : Response<ProfileMainResponse>
+
+
+
 
 
 

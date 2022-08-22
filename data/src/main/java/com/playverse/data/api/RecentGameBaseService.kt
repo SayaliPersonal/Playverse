@@ -28,6 +28,8 @@ interface RecentGameBaseService {
     @POST(Constants.TournamentBuyIn.TOURNAMENT_BUYIN)
     suspend fun tournamentBuyIn(@Body request: BuyinPopUpResponse): Response<TournamentBuyInResponse>
 
+
+
     @GET(Constants.TournamentRegistered.TOURNAMENT_REGISTERED)
     suspend fun tournamentRegistered(
         @Query("gameId") gameId: Int,

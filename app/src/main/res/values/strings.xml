@@ -191,7 +191,7 @@
     //no internet
     <string name="no_internet">No internet connection!</string>
     <string name="please_connect">Please connect to the internet and try again</string>
-    <string name="get_started">m Get Started</string>
+    <string name="get_started">H Get Started</string>
 
     <string name="your_score">Your Score</string>
     <string name="free_game_play">Free Gameplay</string>
