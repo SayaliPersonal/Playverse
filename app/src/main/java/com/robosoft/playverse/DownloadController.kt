@@ -11,10 +11,12 @@ import android.os.Build
 import android.os.Environment
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.ProgressBar
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.FileProvider
+import com.google.android.material.snackbar.Snackbar
+import com.robosoft.playverse.DownloadController.Companion.APP_INSTALL_PATH
 import com.robosoft.playverse.DownloadController.Companion.destination
 import com.robosoft.playverse.DownloadController.Companion.main_context
 import com.robosoft.playverse.DownloadController.Companion.progressBar
@@ -25,7 +27,8 @@ import java.io.File
 class DownloadController(
     private val context: Context,
     private val url: String,
-    public var progressBar1: ProgressBar
+    public var progressBar1: ProgressBar,
+    private val mainLayout: ConstraintLayout
 ) {
 
 
@@ -36,6 +39,7 @@ class DownloadController(
          lateinit var destination: String
          lateinit var  main_context: Context
          lateinit var progressBar: ProgressBar
+        const val APP_INSTALL_PATH = "\"application/vnd.android.package-archive\""
     }
 
 
@@ -47,6 +51,8 @@ class DownloadController(
 
         fun enqueueDownload() {
             progressBar.visibility=View.VISIBLE
+            (main_context as Activity).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
              destination =
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                     .toString() + "/"
@@ -77,27 +83,28 @@ class DownloadController(
             intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED)
             intentFilter.addAction(Intent.ACTION_PACKAGE_INSTALL)
             intentFilter.addDataScheme("package")
-            context.registerReceiver(IntentReceiver(), IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
-            Toast.makeText(context, "downloading", Toast.LENGTH_LONG)
-                .show()
+
+            context.registerReceiver(IntentReceiver(uri), IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
+            Snackbar.make(mainLayout, "Downloading", Snackbar.LENGTH_SHORT).show()
+
 
         }
 
-
-
-
     }
 
-class IntentReceiver : BroadcastReceiver() {
+class IntentReceiver(private val uri: Uri?) : BroadcastReceiver() {
 
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        updateApk(this,context)
+
+        updateApk(this,context,uri)
     }
 
-    private fun updateApk(param: IntentReceiver, context: Context?) {
+    private fun updateApk(param: IntentReceiver, context: Context?,  uri: Uri?) {
         progressBar.visibility=View.GONE
-        Toast.makeText(context, "completed", Toast.LENGTH_SHORT).show()
+        (main_context as Activity).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+//        Toast.makeText(context, "completed", Toast.LENGTH_SHORT).show()
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             val contentUri = FileProvider.getUriForFile(
                 context!!,
@@ -105,32 +112,69 @@ class IntentReceiver : BroadcastReceiver() {
                 File(destination)
             )
 
-            try{
 
-//            Log.d("**rpackageName: ", context.getApplicationInfo().packageName.toString())
-//            val install = Intent(Intent.ACTION_VIEW)
-//            install.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-//            install.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//            install.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-//            install.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-//            install.putExtra(Intent.EXTRA_INSTALLER_PACKAGE_NAME,
-//                context.getApplicationInfo().packageName);
-//                install.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true)
-//
-//            install.setDataAndType(contentUri,"application/vnd.android.package-archive")
-////            install.setData(contentUri)
-//
-//            (main_context as Activity).startActivityForResult(install,REQUEST_INSTALL)
-////                context.startActivity(install)
-//                context. unregisterReceiver(param)
+
+            try{
+                val intentFilter = IntentFilter()
+                intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED)
+                intentFilter.addAction(Intent.ACTION_PACKAGE_INSTALL)
+                intentFilter.addAction(Intent.ACTION_MY_PACKAGE_REPLACED)
+                intentFilter.addDataScheme("package")
+                context. registerReceiver(InstallsReceiver(), intentFilter)
+
+                val file = File(
+                    context!!.getFilesDir(),
+                    context!!.getPackageName().toString() + ".apk"
+                )
+                if (file.exists()) file.delete()
+
+            Log.d("**rpackageName: ", context.getApplicationInfo().packageName.toString())
+            Log.d("**rcontentUri: ", contentUri.toString())
+                val install = Intent(Intent.ACTION_VIEW)
+                install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                install.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                install.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true)
+                install.data = contentUri
+                context.startActivity(install)
+
+//                (main_context as Activity).startActivityForResult(install,REQUEST_INSTALL)
+                (main_context as Activity).finish()
+                context.unregisterReceiver(this)
 
 
             }catch (e: Exception){
                 Log.d("**rException: ", e.message.toString())
-
             }
 
+        }else
+        {
+            val install = Intent(Intent.ACTION_VIEW)
+            install.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            install.setDataAndType(
+                this.uri,
+                APP_INSTALL_PATH
+            )
+            context!!.startActivity(install)
+            context!!.unregisterReceiver(this)
         }
     }
+
+}
+
+
+class InstallsReceiver() : BroadcastReceiver() {
+
+
+    override fun onReceive(context: Context?, intent: Intent?) {
+       Log.d("*******sss","InstallsReceiver")
+        val file = File(
+            context!!.getFilesDir(),
+            context!!.getPackageName().toString() + ".apk"
+        )
+        if (file.exists()) file.delete()
+    }
+
 
 }

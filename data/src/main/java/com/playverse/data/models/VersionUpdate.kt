@@ -7,6 +7,7 @@ data class VersionUpdate(
 ) {
     data class Version_Data(
         val androidAppLink: String,
-        val androidAppVersion: String
+        val androidAppVersion: String,
+        val androidVersionCode: String
     )
 }

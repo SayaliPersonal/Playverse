@@ -56,6 +56,7 @@
             app:progressMode="true"
             app:selectedDotColor="@color/white" />
 
+<!--        android:text="@string/get_started"-->
         <Button
             android:id="@+id/btNext"
             android:layout_width="match_parent"

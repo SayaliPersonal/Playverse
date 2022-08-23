@@ -3,20 +3,20 @@ package com.robosoft.playverse
 
 import android.Manifest
 import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface.OnShowListener
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import android.net.Uri
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -36,11 +36,9 @@ import com.robosoft.playverse.databinding.ActivityMainBinding
 import com.robosoft.playverse.feature.presentation.view.profile.ServerDateTime
 import com.robosoft.playverse.feature.presentation.viewModel.VesrionViewModel
 import com.robosoft.playverse.utilities.TemporaryStorage
+import com.robosoft.playverse.utilities.toast
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
-import java.io.FileOutputStream
-import java.net.HttpURLConnection
-import java.net.URL
 import javax.inject.Inject
 
 
@@ -55,12 +53,14 @@ class MainActivity : AppCompatActivity() {
     private val navController: NavController by lazy {
         (supportFragmentManager.findFragmentById(R.id.navHostMain) as NavHostFragment).navController
     }
+
     companion object {
         const val PERMISSION_REQUEST_STORAGE = 0
         const val REQUEST_INSTALL = 1
     }
 
     lateinit var downloadController: DownloadController
+
     @Inject
     lateinit var appStorage: AppStorage
 
@@ -97,26 +97,32 @@ class MainActivity : AppCompatActivity() {
 
                 if (it1.isSuccessful) {
                     val vesrionUpdate: VersionUpdate = it1.body()!!
-                    Log.d("***VERSION_CODE",  BuildConfig.VERSION_CODE.toString())
-                    Log.d("***VERSION_NAME",  BuildConfig.VERSION_NAME.toString())
+                    Log.d("***VERSION_CODE", BuildConfig.VERSION_CODE.toString())
+                    Log.d("***VERSION_NAME", BuildConfig.VERSION_NAME.toString())
+                    Log.d("***VERSION_CODE", vesrionUpdate.data.androidVersionCode)
                     val input_version: List<String> = BuildConfig.VERSION_NAME.toString().split(".")
-                    val output_version: List<String> = vesrionUpdate.data.androidAppVersion.split(".")
-                    Log.d("***input_version",  input_version[2])
-                    Log.d("***outPut_version",  output_version[2])
-                    Log.d("***Apk",  vesrionUpdate.data.androidAppLink)
-                    downloadController = DownloadController(this,
-                        vesrionUpdate.data.androidAppLink,binding.progressBar)
+                    val output_version: List<String> =
+                        vesrionUpdate.data.androidAppVersion.split(".")
+                    Log.d("***input_version", input_version[1])
+                    Log.d("***outPut_version", output_version[1])
+                    Log.d("***Apk", vesrionUpdate.data.androidAppLink)
+                    downloadController = DownloadController(
+                        this,
+                        vesrionUpdate.data.androidAppLink,
+                        binding.progressBar,
+                        binding.mainLayout
+                    )
+                    if (BuildConfig.VERSION_CODE < Integer.parseInt(vesrionUpdate.data.androidVersionCode)) {
+                        if (Integer.parseInt(input_version[0]) < Integer.parseInt(output_version[0])) {
+                            updateApp(true)
+                        } else if (Integer.parseInt(input_version[1]) < Integer.parseInt(
+                                output_version[1]
+                            )
+                        ) {
+                            updateApp(false)
 
-                    if (Integer.parseInt(input_version[0])<Integer.parseInt(output_version[0]))
-                    {
-
-                        updateApp(true)
-                    }else if(Integer.parseInt(input_version[1])<Integer.parseInt(output_version[1]))
-                    {
-                        updateApp(false)
+                        }
                     }
-
-                } else {
 
                 }
 
@@ -127,54 +133,79 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun updateApp(forceUpdate: Boolean) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Update the app!")
-        builder.setMessage("You are using an older version app, please update to the latest version for the seamless experience!")
+        val factory = LayoutInflater.from(this)
+        val dialogView = factory.inflate(R.layout.update_dialog, null)
+        val btnUpdate = dialogView.findViewById<Button>(R.id.btnUpdate)
+        val imageView = dialogView.findViewById<ImageView>(R.id.imageView)
+        val titleText = dialogView.findViewById<TextView>(R.id.textView23)
+        val desText = dialogView.findViewById<TextView>(R.id.textView24)
+        val btnUpdateLatter = dialogView.findViewById<Button>(R.id.btnUpdateLatter)
 
-        builder.setPositiveButton(
-            "Update"
-        ) { dialogInterface, i -> // Open play store
-            downloadController.enqueueDownload()
-
-            // Dismiss alert dialog
-            dialogInterface.dismiss()
-        }
-        builder.setNegativeButton(
-            "Cancel"
-        ) { dialogInterface, i -> // cancel alert dialog
-            dialogInterface.cancel()
-        }
-        val dialog = builder.create()
-        dialog.setOnShowListener(OnShowListener { dialog ->
-           if (forceUpdate) {
-               builder.setCancelable(false)
-               (dialog as AlertDialog).getButton(AlertDialog.BUTTON_NEGATIVE).isVisible = false
-           }else
-           {
-               builder.setCancelable(false)
-               (dialog as AlertDialog).getButton(AlertDialog.BUTTON_NEGATIVE).isVisible = true
+       when(forceUpdate){
+           true-> {
+               titleText.text = getString(R.string.force_update_title)
+               desText.text = getString(R.string.force_update_desc)
+               btnUpdate.text = "Update now"
+               btnUpdateLatter.visibility=View.GONE
+               imageView.setImageResource(R.drawable.ic_pop_upframe_forceupdate)
            }
-        })
-        dialog.show()
-    }
+           false -> {
+               titleText.text = getString(R.string.optional_update_title)
+               desText.text = getString(R.string.optional_update_desc)
+               btnUpdate.text = "Update now"
+               btnUpdateLatter.visibility=View.VISIBLE
+               imageView.setImageResource(R.drawable.ic_pop_upframe)
+           }
+       }
+
+        val customDialog = AlertDialog.Builder(this, R.style.CustomAlertDialog)
+            .setView(dialogView)
+            .show()
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-        super.onActivityResult(requestCode, resultCode, intent)
-        Toast.makeText(this, "H", Toast.LENGTH_SHORT).show()
 
-        if (requestCode == REQUEST_INSTALL) {
-            if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Install succeeded!", Toast.LENGTH_SHORT).show()
-            } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "Install canceled!", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Install Failed!", Toast.LENGTH_SHORT).show()
+        btnUpdate.setOnClickListener {
+            downloadController.enqueueDownload()
+            customDialog.dismiss()
+        }
+        btnUpdateLatter.setOnClickListener {
+            try {
+                customDialog.dismiss()
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
         }
+        customDialog.setCanceledOnTouchOutside(!forceUpdate)
 
+
+//        val builder = AlertDialog.Builder(this)
+//        builder.setTitle("Update the app!")
+//        builder.setMessage("You are using an older version app, please update to the latest version for the seamless experience!")
+//        builder.setCancelable(!forceUpdate)
+//        builder.setPositiveButton(
+//            "Update"
+//        ) { dialogInterface, i -> // Open play store
+//            downloadController.enqueueDownload()
+//            dialogInterface.dismiss()
+//        }
+//        builder.setNegativeButton(
+//            "Cancel"
+//        ) { dialogInterface, i -> // cancel alert dialog
+//            dialogInterface.cancel()
+//        }
+//        val dialog = builder.create()
+//        dialog.setOnShowListener(OnShowListener { dialog ->
+//                (dialog as AlertDialog).getButton(AlertDialog.BUTTON_NEGATIVE).isVisible = !forceUpdate
+//        })
+//        dialog.show()
     }
+
+
+
+
 
 
     private fun checkStoragePermission() {
@@ -182,16 +213,13 @@ class MainActivity : AppCompatActivity() {
         if (checkSelfPermissionCompat(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
             PackageManager.PERMISSION_GRANTED
         ) {
-            // start downloading
             callVesrionDetails()
-//            downloadController.enqueueDownload()
-
-
         } else {
             // Permission is missing and must be requested.
             requestStoragePermission()
         }
     }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -206,10 +234,14 @@ class MainActivity : AppCompatActivity() {
 //                downloadController.enqueueDownload()
             } else {
                 // Permission request was denied.
-                binding.mainLayout.showSnackbar(R.string.storage_permission_denied, Snackbar.LENGTH_SHORT)
+                binding.mainLayout.showSnackbar(
+                    R.string.storage_permission_denied,
+                    Snackbar.LENGTH_SHORT
+                )
             }
         }
     }
+
     private fun requestStoragePermission() {
 
         if (shouldShowRequestPermissionRationaleCompat(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -230,25 +262,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
     }
-
-    private fun redirectStore(strApkFileUrl: String) {
-
-
-
-        Log.d("hhhh","hhh "+"redirectStore")
-        var  intent= Intent(Intent.ACTION_VIEW, Uri.parse(strApkFileUrl))
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        this.startActivity(intent)
-
-
-//        val apkFile =  File(strApkFileUrl);
-//        val intent =  Intent(Intent.ACTION_VIEW);
-//        intent.setDataAndType(Uri.fromFile(apkFile), "application/vnd.android.package-archive");
-//        startActivity(intent);
-    }
-
-
-
 
 
 
@@ -391,56 +404,28 @@ class MainActivity : AppCompatActivity() {
                             BitmapDrawable(resources, resource)
                     }
                 })
-        }else{
-            binding.bottomNavigationView.menu.findItem(R.id.profileDetailsFragment).setIcon(R.drawable.ic_baseline_sentiment_very_satisfied_24)
+        } else {
+            binding.bottomNavigationView.menu.findItem(R.id.profileDetailsFragment)
+                .setIcon(R.drawable.ic_baseline_sentiment_very_satisfied_24)
         }
 
 
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_INSTALL) {
+            Toast.makeText(this, "REQUEST_INSTALL", Toast.LENGTH_SHORT).show()
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "REQUEST_INSTALL", Toast.LENGTH_SHORT).show()
 
-
-}
-
-class UpdateApp : AsyncTask<String?, Void?, Void?>() {
-    private var context: Context? = null
-    fun setContext(contextf: Context?) {
-        context = contextf
-    }
-
-    protected override fun doInBackground(vararg params: String?): Void? {
-        try {
-            val url = URL(params[0])
-            val c = url.openConnection() as HttpURLConnection
-            c.requestMethod = "GET"
-            c.doOutput = true
-            c.connect()
-            val PATH = "/mnt/sdcard/Download/"
-            val file = File(PATH)
-            file.mkdirs()
-            val outputFile = File(file, "update.apk")
-            if (outputFile.exists()) {
-                outputFile.delete()
+                val file = File(
+                    getFilesDir(),
+                    getPackageName().toString() + ".apk"
+                )
+                if (file.exists()) file.delete()
             }
-            val fos = FileOutputStream(outputFile)
-            val `is` = c.inputStream
-            val buffer = ByteArray(1024)
-            var len1 = 0
-            while (`is`.read(buffer).also { len1 = it } != -1) {
-                fos.write(buffer, 0, len1)
-            }
-            fos.close()
-            `is`.close()
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.setDataAndType(
-                Uri.fromFile(File("/mnt/sdcard/Download/update.apk")),
-                "application/vnd.android.package-archive"
-            )
-            intent.flags =
-                Intent.FLAG_ACTIVITY_NEW_TASK // without this flag android returned a intent error!
-            context?.startActivity(intent)
-        } catch (e: Exception) {
-            Log.e("UpdateAPP", "Update error! " + e.message)
         }
-        return null
+        super.onActivityResult(requestCode, resultCode, data)
     }
+
 }
+

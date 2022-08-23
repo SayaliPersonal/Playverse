@@ -6,6 +6,8 @@ import com.google.android.exoplayer2.database.ExoDatabaseProvider
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor
 import com.google.android.exoplayer2.upstream.cache.SimpleCache
 import dagger.hilt.android.HiltAndroidApp
+import java.io.File
+import java.util.concurrent.ConcurrentHashMap
 
 @HiltAndroidApp
 class PlayVerseApp : MultiDexApplication() {
@@ -19,6 +21,7 @@ class PlayVerseApp : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        val INSTALL_APK_INFO: ConcurrentHashMap<String, File> = ConcurrentHashMap<String, File>()
         if (leastRecentlyUsedCacheEvictor == null) {
             leastRecentlyUsedCacheEvictor = LeastRecentlyUsedCacheEvictor(exoPlayerCacheSize)
         }

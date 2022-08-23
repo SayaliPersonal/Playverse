@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.robosoft.playverse.R
@@ -37,7 +38,6 @@ class GetStartedFragment : Fragment() {
         binding.networkError.btTryAgain.setOnClickListener {
             findNavController().navigate(R.id.getStartedFragment)
         }
-
 
 
         val adapter = GetStartedAdapter (imageList,this)
